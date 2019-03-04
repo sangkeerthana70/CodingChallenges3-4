@@ -10,7 +10,7 @@ namespace BouncingBallChallenge
     {
         static void Main(string[] args)
         {
-            double floorHeight = 10;
+            double floorHeight = 3;
             double bounceRate = 0.66;
             double windowHeight = 1.5;
 
@@ -33,16 +33,14 @@ namespace BouncingBallChallenge
             // set the variable motherSees to 1 initially
             int motherSees = 1;
 
-            // set reboundHeight to total height
             double reboundHeight = h;
 
-            while (reboundHeight > window)
+            
+            while (true)
             {
+                reboundHeight *= bounce;    
                 Console.WriteLine("rebondHeight: " + reboundHeight);
-                // switch reboundHeight to initial reboundHeight to calculate the next bounce 
-                reboundHeight = reboundHeight * bounce;
-
-                if(reboundHeight < window)
+                if (reboundHeight < window)
                 {
                     break;
                 }
