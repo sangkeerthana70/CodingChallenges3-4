@@ -38,7 +38,14 @@ namespace BouncingBallChallenge
 
             while (reboundHeight > window)
             {
+                Console.WriteLine("rebondHeight: " + reboundHeight);
+                // switch reboundHeight to initial reboundHeight to calculate the next bounce 
                 reboundHeight = reboundHeight * bounce;
+
+                if(reboundHeight < window)
+                {
+                    break;
+                }
                 motherSees += 2;
             }
             return motherSees;
