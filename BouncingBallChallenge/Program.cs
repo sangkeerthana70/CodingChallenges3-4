@@ -19,12 +19,12 @@ namespace BouncingBallChallenge
 
         }
 
-        
+
 
         public static int bouncingBall(double h, double bounce, double window)
         {
             // your code
-            if ((h < 0) || (bounce < 0 || bounce > 1) || (window >= h))
+            if ((h < 0) || (bounce <= 0) || (bounce >= 1) || (window >= h))
             {
 
                 return -1;
@@ -36,16 +36,9 @@ namespace BouncingBallChallenge
             // set reboundHeight to total height
             double reboundHeight = h;
 
-            while (true)
+            while (reboundHeight > window)
             {
-                // switch reboundHeight to initial reboundHeight to calculate the next bounce 
                 reboundHeight = reboundHeight * bounce;
-
-                if(reboundHeight < window)
-                {
-                    break;
-                }
-
                 motherSees += 2;
             }
             return motherSees;
