@@ -38,6 +38,7 @@ namespace BouncingBallChallenge
 
             while (true)
             {
+                // switch reboundHeight to initial reboundHeight to calculate the next bounce 
                 reboundHeight = reboundHeight * bounce;
 
                 if(reboundHeight < window)
