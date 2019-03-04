@@ -45,6 +45,7 @@ namespace BouncingBallChallenge
                 {
                     break;
                 }
+
                 motherSees += 2;
             }
             return motherSees;
