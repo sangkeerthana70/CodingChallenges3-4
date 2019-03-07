@@ -34,10 +34,10 @@ namespace BouncingBallChallenge
 
 
 
-        public static int bouncingBall(double h, double bounce, double window)
+        public static int bouncingBall(double height, double bounce, double window)
         {
             // your code
-            if ((h < 0) || (bounce <= 0) || (bounce >= 1) || (window >= h))
+            if ((height < 0) || (bounce <= 0) || (bounce >= 1) || (window >= height))
             {
 
                 return -1;
@@ -46,13 +46,12 @@ namespace BouncingBallChallenge
             // set the variable motherSees to 1 initially
             int motherSees = 1;
 
-            double reboundHeight = h;
+            double reboundHeight = height;
 
             
             while (true)
             {
-                reboundHeight *= bounce;    
-                Console.WriteLine("rebondHeight: " + reboundHeight);
+                reboundHeight *= bounce;                   
                 if (reboundHeight < window)
                 {
                     break;
