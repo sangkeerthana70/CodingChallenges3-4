@@ -10,42 +10,56 @@ namespace DrawBoardV2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter height value between 2 and 30: ");
+            Console.WriteLine("Enter height of board between 2 and 30: ");
             int height = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(height);
-            if(height < 2 || height > 30)
+            Console.WriteLine("Enter width of board between 2 and 30");
+            int width = Convert.ToInt32(Console.ReadLine());
+
+            if (height < 2 || height > 30)
             {
                 Console.WriteLine("Please enter a valid height");
             }
-
-            DrawBoard(height);
-
-        }
-
-        public static void DrawBoard(int height)
-        {
-            int n = (2 * height) - 1;
-            for (int i = 0; i < n; i++)
+            if(width < 2 || width > 30)
             {
-                if (i % 2 == 0)
+                Console.WriteLine("Enter width of the board:");
+            }
+
+            DrawBoard(width, height);
+           
+
+
+            
+
+           
+        }
+        public static void DrawBoard(int width, int height)
+        {
+             
+            
+            for(var i = 0; i < (2 * height) -1; i++)
+            {
+                if ((i % 2) == 0)
                 {
-                    DrawBox(height);
+                    DrawRows(width);
                 }
                 else
                 {
-                    DrawSeparator(height);
+                    DrawSeparator(width);
                 }
             }
-
+            Console.WriteLine();
+            
         }
 
-        //prints first line accross as " |" for the specified height
-        public static void DrawBox(int height)
+        // prints rows of boxes for a specified width
+        public static void DrawRows(int width)
         {
-            int n = (2 * height) - 1;
-            for (int i = 0; i < n; i++)
+            int n = (2 * width) - 1;
+
+            // start i from 0 as 0%2 is 0 which is even
+            for(var i = 0; i < n; i++)
             {
-                if (i % 2 == 0)
+                if(i % 2 == 0)
                 {
                     Console.Write(" ");
                 }
@@ -56,14 +70,17 @@ namespace DrawBoardV2
 
             }
             Console.WriteLine();
+            
+
         }
-        // prints second line accross as "-+" for the specified height
-        public static void DrawSeparator(int height)
+
+        public static void DrawSeparator(int width)
         {
-            int n = (2 * height) - 1;
-            for (int j = 0; j < n; j++)
+            int n = (2 * width) - 1;
+
+            for(var i = 0; i < n; i++)
             {
-                if (j % 2 == 0)
+                if(i % 2 == 0)
                 {
                     Console.Write("-");
                 }
@@ -71,10 +88,9 @@ namespace DrawBoardV2
                 {
                     Console.Write("+");
                 }
-
-
             }
             Console.WriteLine();
+
         }
     }
 }
