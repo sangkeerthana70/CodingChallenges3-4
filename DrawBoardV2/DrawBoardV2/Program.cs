@@ -21,21 +21,24 @@ namespace DrawBoardV2
             }
             if(width < 2 || width > 30)
             {
-                Console.WriteLine("Enter width of the board:");
+                Console.WriteLine("Please enter a valid height");
             }
 
             //DrawBoard(width, height);
 
             DrawBoard myBoard = new DrawBoard(width, height);
             // call each function DrawRows and DrawSeparator for a specified height.
-            for (var i = 0; i < (2 * height) - 1; i++)
+            int n = (2 * height) - 1;
+            for (var i = 0; i < n; i++)
             {
+                // call DrawRows for even
                 if ((i % 2) == 0)
                 {
                     myBoard.DrawRows(width);
                 }
                 else
                 {
+                    // call Drawseparator for odd
                     myBoard.DrawSeparator(width);
                 }
             }
