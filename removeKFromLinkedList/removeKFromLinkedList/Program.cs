@@ -12,19 +12,24 @@ namespace removeKFromLinkedList
         {
             List<int> input = new List<int> { 3, 1, 2, 3, 4, 5 };
             var l = CreateLinkedList(input);
+            /*
             Console.WriteLine(l.value);
             Console.WriteLine(l.next.value);
             Console.WriteLine(l.next.next.value);
             Console.WriteLine(l.next.next.next.value);
             Console.WriteLine(l.next.next.next.next.value);
             Console.WriteLine(l.next.next.next.next.next.value);
-            printLinkedList(l); 
+            */
+            //printLinkedList(l); 
+            var k = 5;
+            removeKFromList(l, k);
 
         }
 
         // create an Linked list from an integer list
         static ListNode<int> CreateLinkedList(List<int> input)
         {
+            // instantiate the generic class ListNode<T> to create a head
             ListNode<int> head = new ListNode<int>();
 
             var currNode = head;
@@ -33,6 +38,7 @@ namespace removeKFromLinkedList
                 currNode.value = input[i];
                 if (i < input.Count - 1)
                 {
+                    // create next node 
                     currNode.next = new ListNode<int>();
                     currNode = currNode.next;
                 }
@@ -63,6 +69,8 @@ namespace removeKFromLinkedList
         }
         static ListNode<int> removeKFromList(ListNode<int> l, int k)
         {
+            Console.WriteLine("In removeKFromList method");
+            Console.WriteLine(l.value);
 
             ListNode<int> traveller = l;
 
@@ -70,8 +78,18 @@ namespace removeKFromLinkedList
             {
                 return l;
             }
-
-
+            var currNode = l;
+            
+            while(currNode != null)
+            {
+                currNode = currNode.next;
+                Console.WriteLine("currNode: " + currNode.value);
+                if(currNode.value == k)
+                {
+                    var previousNode = currNode.next;
+                }
+            }
+            
             return l;
         }
 
