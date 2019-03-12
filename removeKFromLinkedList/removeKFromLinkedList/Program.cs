@@ -15,9 +15,14 @@ namespace removeKFromLinkedList
             Console.WriteLine(l.value);
             Console.WriteLine(l.next.value);
             Console.WriteLine(l.next.next.value);
+            Console.WriteLine(l.next.next.next.value);
+            Console.WriteLine(l.next.next.next.next.value);
+            Console.WriteLine(l.next.next.next.next.next.value);
+            printLinkedList(l); 
 
         }
 
+        // create an Linked list from an integer list
         static ListNode<int> CreateLinkedList(List<int> input)
         {
             ListNode<int> head = new ListNode<int>();
@@ -39,6 +44,21 @@ namespace removeKFromLinkedList
 
         static void printLinkedList(ListNode<int> l)
         {
+            Console.WriteLine("In Print linked list method");
+            ListNode<int> head = l;
+            if(l == null)
+            {
+                Console.WriteLine("List node is null");
+            }
+
+            var currNode = l;
+            Console.WriteLine(currNode.value);
+            while(currNode.next != null)
+            {
+                currNode = currNode.next;
+                Console.WriteLine(currNode.value);
+            }
+
 
         }
         static ListNode<int> removeKFromList(ListNode<int> l, int k)
