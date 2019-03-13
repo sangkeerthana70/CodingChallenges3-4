@@ -20,9 +20,9 @@ namespace removeKFromLinkedList
             Console.WriteLine(l.next.next.next.next.value);
             Console.WriteLine(l.next.next.next.next.next.value);
             */
-            //printLinkedList(l); 
+            printLinkedList(l); 
             var k = 5;
-            removeKFromList(l, k);
+            //removeKFromList(l, k);
 
         }
 
@@ -50,19 +50,31 @@ namespace removeKFromLinkedList
 
         static void printLinkedList(ListNode<int> l)
         {
-            Console.WriteLine("In Print linked list method");
-            ListNode<int> head = l;
+            Console.WriteLine("In Print linked list method\n");
+            var head = l;
             if(l == null)
             {
                 Console.WriteLine("List node is null");
             }
 
-            var currNode = l;
-            Console.WriteLine(currNode.value);
-            while(currNode.next != null)
+            var currNode = head;
+            ListNode<int> previousNode = null;
+
+            while (currNode != null)
             {
+                Console.WriteLine("currNode: " + currNode.value);
+                if (previousNode != null)
+                {
+                    Console.WriteLine("previousNode: " + previousNode.value);
+                }
+                previousNode = currNode;
                 currNode = currNode.next;
-                Console.WriteLine(currNode.value);
+                
+                if (currNode != null)
+                {
+                    Console.WriteLine("nextNode: " + currNode.value);
+                }
+                Console.WriteLine("");
             }
 
 
