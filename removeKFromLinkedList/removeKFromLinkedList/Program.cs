@@ -20,9 +20,10 @@ namespace removeKFromLinkedList
             Console.WriteLine(l.next.next.next.next.value);
             Console.WriteLine(l.next.next.next.next.next.value);
             */
+            
+            var k = 3;
+            l = removeKFromList(l, k);
             printLinkedList(l); 
-            var k = 5;
-            //removeKFromList(l, k);
 
         }
 
@@ -52,7 +53,7 @@ namespace removeKFromLinkedList
         {
             Console.WriteLine("In Print linked list method\n");
             var head = l;
-            if(l == null)
+            if(head == null)
             {
                 Console.WriteLine("List node is null");
             }
@@ -65,14 +66,14 @@ namespace removeKFromLinkedList
                 Console.WriteLine("currNode: " + currNode.value);
                 if (previousNode != null)
                 {
-                    Console.WriteLine("previousNode: " + previousNode.value);
+                    //Console.WriteLine("previousNode: " + previousNode.value);
                 }
                 previousNode = currNode;
                 currNode = currNode.next;
                 
                 if (currNode != null)
                 {
-                    Console.WriteLine("nextNode: " + currNode.value);
+                    //Console.WriteLine("nextNode: " + currNode.value);
                 }
                 Console.WriteLine("");
             }
@@ -82,24 +83,33 @@ namespace removeKFromLinkedList
         static ListNode<int> removeKFromList(ListNode<int> l, int k)
         {
             Console.WriteLine("In removeKFromList method");
-            Console.WriteLine(l.value);
+            //Console.WriteLine(l.value);
 
-            ListNode<int> traveller = l;
+            ListNode<int> head = l;
 
-            if (l == null)
+            if (head == null)
             {
-                return l;
+                return head;
             }
-            var currNode = l;
+            var currNode = head;
+            ListNode<int> previousNode = null;
             
             while(currNode != null)
             {
-                currNode = currNode.next;
-                Console.WriteLine("currNode: " + currNode.value);
                 if(currNode.value == k)
                 {
-                    var previousNode = currNode.next;
+                    if (previousNode == null)
+                    {
+                        l = currNode.next;
+                    }
+                    else
+                    {
+                        previousNode.next = currNode.next;
+                    }
                 }
+                previousNode = currNode;
+                currNode = currNode.next;
+                
             }
             
             return l;
