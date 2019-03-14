@@ -10,7 +10,7 @@ namespace removeKFromLinkedList
     {
         static void Main(string[] args)
         {
-            List<int> input = new List<int> { 3, 1, 2, 3, 4, 5 };
+            List<int> input = new List<int> { 1000, 1000 };
             var l = CreateLinkedList(input);
             /*
             Console.WriteLine(l.value);
@@ -21,7 +21,7 @@ namespace removeKFromLinkedList
             Console.WriteLine(l.next.next.next.next.next.value);
             */
             
-            var k = 3;
+            var k = 1000;
             l = removeKFromList(l, k);
             printLinkedList(l); 
 
@@ -91,14 +91,14 @@ namespace removeKFromLinkedList
             {
                 return head;
             }
+
             var currNode = head;
             ListNode<int> previousNode = null;
-            
             while(currNode != null)
             {
                 if(currNode.value == k)
                 {
-                    if (previousNode == null)
+                    if(previousNode == null)
                     {
                         l = currNode.next;
                     }
@@ -109,10 +109,18 @@ namespace removeKFromLinkedList
                 }
                 previousNode = currNode;
                 currNode = currNode.next;
-                
             }
-            
+            //if(l.value == k)
+            //{
+            //    return null;
+            //}
+            if (l != null && l.value == k)
+            {
+                return null;
+            }
+
             return l;
+ 
         }
 
 
