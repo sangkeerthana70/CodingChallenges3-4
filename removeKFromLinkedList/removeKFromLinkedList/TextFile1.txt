@@ -1,0 +1,49 @@
+﻿  //cliff's code without recursion
+  
+  
+     if(l  == null){
+      return l;
+     }
+     //console.writeline(l.value);     
+	 //( remove k from head)
+     while(l.value == k){
+       if(l.next == null){
+          return l.next;
+       }
+       l = l.next;
+       
+      }
+      
+     ListNode<int> trav  = l;
+ // travel until end of list)
+     while(trav.next != null){
+      if(trav.next.value == k){
+        trav.next = trav.next.next;
+       continue; // restart the loop
+      }
+      else{
+       //if trav != k 
+       trav = trav.next;
+      }
+      
+      
+     }
+       return l;
+ //========================================================================
+ //Cliff's code using recursion
+ ListNode<int> removeKFromList(ListNode<int> l, int k) {
+    
+   if(l == null){
+    return l;
+   }
+ 
+  
+ 
+  // start from back of list  
+  // 3 8 3 1 5 3 null
+  l.next = removeKFromList(l.next, k);
+  if(l.value == k){
+   return l.next;
+  }
+ return l;
+ 
