@@ -10,7 +10,8 @@ namespace removeKFromLinkedList
     {
         static void Main(string[] args)
         {
-            List<int> input = new List<int> { 1000, 1000 };
+            //List<int> input = new List<int> { 1000, 1000 };
+            List<int> input = new List<int> { 3, 1, 2, 3, 4, 5 };
             var l = CreateLinkedList(input);
             /*
             Console.WriteLine(l.value);
@@ -49,6 +50,7 @@ namespace removeKFromLinkedList
 
         }
 
+        // call this method to print the currentNode for each iteration in the removeKFromList method
         static void printLinkedList(ListNode<int> l)
         {
             Console.WriteLine("In Print linked list method\n");
@@ -66,14 +68,14 @@ namespace removeKFromLinkedList
                 Console.WriteLine("currNode: " + currNode.value);
                 if (previousNode != null)
                 {
-                    //Console.WriteLine("previousNode: " + previousNode.value);
+                    Console.WriteLine("previousNode: " + previousNode.value);
                 }
                 previousNode = currNode;
                 currNode = currNode.next;
                 
                 if (currNode != null)
                 {
-                    //Console.WriteLine("nextNode: " + currNode.value);
+                    Console.WriteLine("nextNode: " + currNode.value);
                 }
                 Console.WriteLine("");
             }
