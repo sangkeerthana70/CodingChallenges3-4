@@ -98,6 +98,9 @@ namespace removeKFromLinkedList
             {
                 if(currNode.value == k)
                 {
+                    // if l.value == k and l is the first element
+                    // reset l to next node if previous node is null
+                    
                     if(previousNode == null)
                     {
                         l = currNode.next;
