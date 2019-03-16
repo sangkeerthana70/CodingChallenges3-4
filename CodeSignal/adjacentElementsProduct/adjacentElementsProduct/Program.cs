@@ -12,7 +12,8 @@ namespace adjacentElementsProduct
         {
 
             //int[] inputArray = new int[] { 4, 1, 2, 3, 1, 5 };
-            int[] inputArray = new int[] { -23, 4, -3, 8, -12 };
+            //int[] inputArray = new int[] { -23, 4, -3, 8, -12 };
+            int[] inputArray = new int[] { 1, 0, 1, 0, 1000 };
             int result = adjacentElementsProduct(inputArray);
             Console.WriteLine("result: " + result);
         }
