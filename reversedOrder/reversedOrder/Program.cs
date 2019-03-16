@@ -10,7 +10,7 @@ namespace reversedOrder
     {
         static void Main(string[] args)
         {
-            int num = 214;
+            int num = 21445;
 
             int res = Kata.ReversedOrder(num);
             Console.WriteLine(res);
@@ -30,21 +30,12 @@ namespace reversedOrder
         {
             public static int ReversedOrder(int num)
             {
-                int reverse = 0;
-                int i = 1;
+                int reverse = 0;                
                 while(num > 0)
-                {
-                    Console.WriteLine("loop: " + i);
-                    int lastDigit = num % 10;
-                    Console.WriteLine("lastDigit: " + lastDigit);
-                    Console.WriteLine("reverse * 10: " + reverse * 10);
-                    reverse = (reverse * 10) + lastDigit;
-                    Console.WriteLine("reverse: " + reverse);
+                {                                     
+                    reverse = (reverse * 10) + num % 10;                   
                     num = num / 10;
-                    Console.WriteLine("num: " + num);
-                    i++;
-                }
-                Console.WriteLine("reverse: " + reverse);
+                }                
                 return reverse;
             }
         }
