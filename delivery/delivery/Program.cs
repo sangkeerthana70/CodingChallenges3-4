@@ -11,9 +11,19 @@ namespace delivery
         static void Main(string[] args)
         {
             int[] order = new int[] { 200, 20, 15 };
-            int[,] shoppers = new int[2, 3] { { 300, 40, 5 }, { 600, 40, 10 } };
+            //int[,] shoppers = new int[2, 3] { { 300, 40, 5 }, { 600, 40, 10 } };
+            int[][] shoppers = new int[2][];
+            shoppers[0] = new int[] { 300, 40, 5};
+            shoppers[1] = new int[] { 600, 40, 10 };
 
-            bool[] result = delivery(order, shoppers[]);
+
+            bool[] result = delivery(order, shoppers);
+            //foreach(bool item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            string boolArray = String.Join(",", result);
+            Console.WriteLine(boolArray);
         }
        
 
@@ -32,6 +42,7 @@ namespace delivery
                 int shopper_distance_from_store = shopper[0];
                 int shopper_speed = shopper[1];
                 int shopper_shopTime = shopper[2];
+
                 //calculate total time
                 double totalTime = Convert.ToDouble(order_Distance + shopper_distance_from_store) / shopper_speed + shopper_shopTime;
 
@@ -39,19 +50,22 @@ namespace delivery
 
 
                 // calculate wait time
-                double idleTime = Math.Abs(order_ready_time - totalTime);
+                double idleTime = order_ready_time + order_wait_time;
 
                 Console.WriteLine("idleTime: " + idleTime);
-                if (idleTime >= (order_ready_time + order_wait_time))
+
+                if ((totalTime < order_ready_time) || (totalTime > idleTime))
                 {
                     result[index] = false;
                 }
+
                 else
                 {
                     result[index] = true;
                 }
 
                 index++;
+
             }
             return result;
 
