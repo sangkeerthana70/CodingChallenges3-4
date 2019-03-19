@@ -74,3 +74,8 @@ namespace delivery
         }
     }
 }
+//Console Output:
+//totalTime: 17.5
+//idealDeliveryTime: 35
+//totalTime: 30
+//idealDeliveryTime: 35
