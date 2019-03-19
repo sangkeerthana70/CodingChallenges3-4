@@ -47,14 +47,13 @@ namespace delivery
                 double totalTime = Convert.ToDouble(order_Distance + shopper_distance_from_store) / shopper_speed + shopper_shopTime;
 
                 Console.WriteLine("totalTime: " + totalTime);
-
-
                 // calculate wait time
-                double idleTime = order_ready_time + order_wait_time;
+                double idealDeliveryTime = order_ready_time + order_wait_time;
 
-                Console.WriteLine("idleTime: " + idleTime);
+                Console.WriteLine("idealDeliveryTime: " + idealDeliveryTime);
 
-                if ((totalTime < order_ready_time) || (totalTime > idleTime))
+                // delivery window should be between order_ready_time and idealDeliveryTime
+                if ((totalTime < order_ready_time) || (totalTime > idealDeliveryTime))
                 {
                     result[index] = false;
                 }
@@ -65,6 +64,9 @@ namespace delivery
                 }
 
                 index++;
+
+
+
 
             }
             return result;
