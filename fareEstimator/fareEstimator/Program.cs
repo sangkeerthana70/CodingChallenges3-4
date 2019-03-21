@@ -10,10 +10,10 @@ namespace fareEstimator
     {
         static void Main(string[] args)
         {
-            int ride_time = 30;
-            double[] cost_per_minute = { 0.2, 0.35, 0.4, 0.45 };
-            int ride_distance = 7;
-            double[] cost_per_mile = { 1.1, 1.8, 2.3, 3.5 };
+            int ride_time = 15;
+            double[] cost_per_minute = { 0.2, 0.34, 0.35, 0.45, 1 };
+            int ride_distance = 9;
+            double[] cost_per_mile = { 1.1, 1.8, 1.9, 1.7, 5 };
             rideTime rt = new rideTime(ride_time, cost_per_minute);
 
             double[] res = rt.calcCostPerMinute(ride_time, cost_per_minute);
@@ -24,8 +24,8 @@ namespace fareEstimator
             double[] res1 = rd.calcCostPerMile(ride_distance, cost_per_mile);
             Console.WriteLine(String.Join(" ", res1));
 
-            double[] result = totalFare(res, res1);
-            Console.WriteLine(String.Join(" ", result));
+            double[] totalFareResults = totalFare(res, res1);
+            Console.WriteLine(String.Join(" ", totalFareResults));
             
         }
         public static double[] totalFare(double[] res, double[] res1)

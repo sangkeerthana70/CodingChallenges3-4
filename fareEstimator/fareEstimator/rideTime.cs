@@ -10,25 +10,25 @@ namespace fareEstimator
     {
         public int ride_time;
         public double[] cost_per_minute;
-        public rideTime(int rt, double[] cpmin)
+        public rideTime(int rideTime, double[] costPerMin)
         {
-            this.ride_time = rt;
-            this.cost_per_minute = cpmin;
+            this.ride_time = rideTime;
+            this.cost_per_minute = costPerMin;
         }
 
-        public double[] calcCostPerMinute(int rt, double[] cpmin)
+        public double[] calcCostPerMinute(int rideTime, double[] costPerMin)
         {
-            double[] costPerMinute = new double[cpmin.Length];
+            double[] estimateCostPerMinute = new double[costPerMin.Length];
 
-            for(var i = 0; i < cpmin.Length; i++)
+            for(var i = 0; i < costPerMin.Length; i++)
             {
-                costPerMinute[i] = rt * cpmin[i];
-                Console.WriteLine("rt: " + rt);
-                Console.WriteLine("cpmin: " + cpmin[i]);
-                Console.WriteLine(costPerMinute[i]);
+                estimateCostPerMinute[i] = rideTime * costPerMin[i];
+                Console.WriteLine("rt: " + rideTime);
+                Console.WriteLine("cpmin: " + costPerMin[i]);
+                Console.WriteLine(estimateCostPerMinute[i]);
             }
 
-            return costPerMinute;
+            return estimateCostPerMinute;
         }
     }
 }

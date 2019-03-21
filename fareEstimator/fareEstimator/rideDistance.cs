@@ -11,24 +11,24 @@ namespace fareEstimator
         public int ride_distance;
         public double[] cost_per_mile;
 
-        public rideDistance(int rd, double[] cpmile)
+        public rideDistance(int rideDistance, double[] costPerMile)
         {
-            this.ride_distance = rd;
-            this.cost_per_mile = cpmile;
+            this.ride_distance = rideDistance;
+            this.cost_per_mile = costPerMile;
         }
 
-        public double[] calcCostPerMile(int rd, double[] cpmile)
+        public double[] calcCostPerMile(int rd, double[] costPerMile)
         {
-            double[] costPerMile = new double[cpmile.Length];
+            double[] estimateCostPerMile = new double[costPerMile.Length];
 
-            for(var i = 0; i < cpmile.Length; i++)
+            for(var i = 0; i < costPerMile.Length; i++)
             {
-                costPerMile[i] = rd * cpmile[i];
+                estimateCostPerMile[i] = rd * costPerMile[i];
                 Console.WriteLine("rd: " + rd);
-                Console.WriteLine("cpmile[i]: " + cpmile[i]);
+                Console.WriteLine("cpmile[i]: " + costPerMile[i]);
                 Console.WriteLine(costPerMile[i]);
             }
-            return costPerMile;
+            return estimateCostPerMile;
         }
     }
 }
