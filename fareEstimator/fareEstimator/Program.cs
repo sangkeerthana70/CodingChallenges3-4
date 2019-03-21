@@ -18,11 +18,11 @@ namespace fareEstimator
 
             double[] res = rt.calcCostPerMinute(ride_time, cost_per_minute);
 
-            Console.WriteLine(String.Join(" ", res));
+            //Console.WriteLine(String.Join(" ", res));
 
             rideDistance rd = new rideDistance(ride_distance, cost_per_mile);
             double[] res1 = rd.calcCostPerMile(ride_distance, cost_per_mile);
-            Console.WriteLine(String.Join(" ", res1));
+            //Console.WriteLine(String.Join(" ", res1));
 
             double[] totalFareResults = totalFare(res, res1);
             Console.WriteLine(String.Join(" ", totalFareResults));

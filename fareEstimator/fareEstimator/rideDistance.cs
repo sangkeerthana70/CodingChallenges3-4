@@ -24,9 +24,7 @@ namespace fareEstimator
             for(var i = 0; i < costPerMile.Length; i++)
             {
                 estimateCostPerMile[i] = rd * costPerMile[i];
-                Console.WriteLine("rd: " + rd);
-                Console.WriteLine("cpmile[i]: " + costPerMile[i]);
-                Console.WriteLine(costPerMile[i]);
+                
             }
             return estimateCostPerMile;
         }

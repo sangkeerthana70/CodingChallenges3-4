@@ -23,9 +23,7 @@ namespace fareEstimator
             for(var i = 0; i < costPerMin.Length; i++)
             {
                 estimateCostPerMinute[i] = rideTime * costPerMin[i];
-                Console.WriteLine("rt: " + rideTime);
-                Console.WriteLine("cpmin: " + costPerMin[i]);
-                Console.WriteLine(estimateCostPerMinute[i]);
+                
             }
 
             return estimateCostPerMinute;
