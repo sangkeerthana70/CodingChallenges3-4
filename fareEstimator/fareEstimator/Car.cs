@@ -8,8 +8,8 @@ namespace fareEstimator
 {
     public class Car
     {
-        public double cost_per_minute;
-        public double cost_per_mile;
+        double cost_per_minute;
+        double cost_per_mile;
 
         public Car(double costPerMinute, double costPerMile)
         {
@@ -21,9 +21,9 @@ namespace fareEstimator
         {
             double fare = 0;
             fare = (ride_time * cost_per_minute) + (ride_distance * cost_per_mile);
-            Console.WriteLine(ride_time * cost_per_minute);
-            Console.WriteLine(ride_distance * cost_per_mile);
-            Console.WriteLine("totaFare: " + fare);
+            //Console.WriteLine(ride_time * cost_per_minute);
+            //Console.WriteLine(ride_distance * cost_per_mile);
+            //Console.WriteLine("totaFare: " + fare);
 
             return fare;
         }

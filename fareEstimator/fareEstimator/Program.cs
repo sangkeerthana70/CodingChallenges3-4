@@ -23,7 +23,7 @@ namespace fareEstimator
                 Car car = new Car(cost_per_minute[i], cost_per_mile[i]);
                 
                 totalfare[i] = car.calculateCarFare(ride_time, ride_distance);
-                Console.WriteLine("totalFare[i]: " + totalfare[i]);
+                //Console.WriteLine("totalFare[i]: " + totalfare[i]);
             }
             Console.WriteLine(String.Join(" ", totalfare));
 
