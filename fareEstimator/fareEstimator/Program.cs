@@ -10,32 +10,23 @@ namespace fareEstimator
     {
         static void Main(string[] args)
         {
-            int ride_time = 15;
-            double[] cost_per_minute = { 0.2, 0.34, 0.35, 0.45, 1 };
-            int ride_distance = 9;
-            double[] cost_per_mile = { 1.1, 1.8, 1.9, 1.7, 5 };
-            rideTime rt = new rideTime(ride_time, cost_per_minute);
+            int ride_time = 30;
+            double[] cost_per_minute = { 0.2, 0.35, 0.4, 0.45 };
+            int ride_distance = 7;
+            double[] cost_per_mile = { 1.1, 1.8, 2.3, 3.5 };
 
-            double[] res = rt.calcCostPerMinute(ride_time, cost_per_minute);
-
-            //Console.WriteLine(String.Join(" ", res));
-
-            rideDistance rd = new rideDistance(ride_distance, cost_per_mile);
-            double[] res1 = rd.calcCostPerMile(ride_distance, cost_per_mile);
-            //Console.WriteLine(String.Join(" ", res1));
-
-            double[] totalFareResults = totalFare(res, res1);
-            Console.WriteLine(String.Join(" ", totalFareResults));
+            double[] totalfare = new double[cost_per_mile.Length];
             
-        }
-        public static double[] totalFare(double[] res, double[] res1)
-        {
-            double[] totalFare = new double[res.Length];
-            for (var i = 0; i < res.Length; i++)
+
+            for (var i = 0; i < cost_per_mile.Length; i++)
             {
-                totalFare[i] = res[i] + res1[i];
+                Car car = new Car(cost_per_minute[i], cost_per_mile[i]);
+                
+                totalfare[i] = car.calculateCarFare(ride_time, ride_distance);
+                Console.WriteLine("totalFare[i]: " + totalfare[i]);
             }
-            return totalFare;
+            Console.WriteLine(String.Join(" ", totalfare));
+
         }
     }
 
