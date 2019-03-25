@@ -32,13 +32,13 @@ namespace ratingThreshold
                 total = 0;
                 int[] innerArray = ratings[i];
                 Console.WriteLine(String.Join(" ", innerArray));
-                System.Console.WriteLine("Element({0}): ", i);
+                System.Console.WriteLine("Element({0}): "+ i);
                 
                 for (int j = 0; j < innerArray.Length; j++)
                 {                   
                     Console.WriteLine("in nested for loop");
                     
-                    System.Console.Write("ratings: " + ratings[i][j]+ "");
+                    System.Console.WriteLine("ratings[i][j]: " + ratings[i][j]);
                     total += ratings[i][j];
                 }
                 Console.WriteLine("total: " + total);
