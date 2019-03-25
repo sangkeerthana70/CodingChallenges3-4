@@ -22,7 +22,7 @@ namespace ratingThreshold
         public static int[] ratingThreshold(double threshold, int[][] ratings)
         {
 
-            int[] totalCount = new int[ratings.Length];
+            List<int> totalCount = new List<int> ();
             double total = 0;
             double average = 0;
             int count = 0;
@@ -48,11 +48,12 @@ namespace ratingThreshold
                 if (average < threshold)
                 {
                     count = Array.IndexOf(ratings, innerArray);
-                    totalCount[i] = count;
+                    Console.WriteLine("Count: " + count);
 
+                    totalCount.Add(count);
                 }
             }
-            return totalCount;
+            return totalCount.ToArray();
             
 
             
