@@ -34,8 +34,6 @@ namespace ratingThreshold
 
                 for (int j = 0; j < innerArray.Length; j++)
                 {                   
-                    
-                    
                     //System.Console.WriteLine("ratings[i][j]: " + ratings[i][j]);
                     total += ratings[i][j];
                 }
