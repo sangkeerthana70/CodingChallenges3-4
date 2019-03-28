@@ -10,11 +10,11 @@ namespace ratingThreshold
     {
         static void Main(string[] args)
         {
-            double threshold = 3.5;
+            double threshold = 5;
             int[][] ratings = new int[3][];
-            ratings[0] = new int[] { 3, 4 };
-            ratings[1] = new int[] { 3, 3, 3, 4 };
-            ratings[2] = new int[] { 4 };
+            ratings[0] = new int[] { 2, 4, 5, 2, 1, 3, 4 };
+            ratings[1] = new int[] { 3, 4, 5, 5, 5, 3, 2 };
+            ratings[2] = new int[] { 1, 1, 1, 2, 1, 1 };
             int [] res = ratingThreshold(threshold, ratings);
             Console.WriteLine(String.Join(" ",res));
         }
