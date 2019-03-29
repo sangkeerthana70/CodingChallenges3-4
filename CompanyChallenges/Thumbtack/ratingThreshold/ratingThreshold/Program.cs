@@ -19,38 +19,30 @@ namespace ratingThreshold
             Console.WriteLine(String.Join(" ",res));
         }
 
-        public static int[] ratingThreshold(double threshold, int[][] ratingsArr)
+        public static int[] ratingThreshold(double threshold, int[][] ratings)
         {
-
             List<int> prosReviewedManually = new List<int> ();
-            
-            // loop through the length of the first dimension
-            for(int ratings = 0; ratings < ratingsArr.GetLength(0); ratings++)
+
+            for(int row = 0; row < ratings.GetLength(0); row++)
             {
                 double total = 0;
                 double average = 0;
-                //int count = 0;               
-                int[] innerArray = ratingsArr[ratings];
-
-                for (int rating = 0; rating < innerArray.Length; rating++)
-                {                   
-                    //System.Console.WriteLine("ratings[i][j]: " + ratings[i][j]);
-                    total += ratingsArr[ratings][rating];
+                             
+                int[] rating = ratings[row];
+                
+                for (int column = 0; column < rating.Length; column++)
+                {                                     
+                    total += ratings[row][column];
                 }
                 
-                average = total / innerArray.Length;               
+                average = total / rating.Length;               
 
                 if (average < threshold)
                 {
-                    //count = Array.IndexOf(ratings, innerArray);
-                    //prosReviewedManually.Add(count);
-                    prosReviewedManually.Add(Array.IndexOf(ratingsArr, innerArray));
+                    prosReviewedManually.Add(Array.IndexOf(ratings, rating));
                 }
             }
-            return prosReviewedManually.ToArray();
-            
+            return prosReviewedManually.ToArray();           
         }
-
-
     }
 }
