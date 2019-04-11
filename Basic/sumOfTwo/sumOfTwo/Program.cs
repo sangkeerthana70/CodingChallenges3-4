@@ -12,7 +12,7 @@ namespace sumOfTwo
         {
             int[] a = new int[] { 1, 2, 3 };
             int[] b = new int[] { 10, 20, 30, 40 };
-            int value = 42;
+            int value = 50;
             bool result = sumOfTwo(a, b, value);
             Console.WriteLine(result);
 
@@ -20,16 +20,28 @@ namespace sumOfTwo
 
         public static bool sumOfTwo(int[] a, int[] b, int v)
         {
-            for(int i = 0; i < a.Length; i++)
+            int len = a.Length;
+            Console.WriteLine(len);
+            int len1 = b.Length;
+            Console.WriteLine(len1);
+            for (int i = 0; i < a.Length; i++)
             {
-                for(int j = 0; j < b.Length; j++)
+                for (int j = 0; j < b.Length; j++)
                 {
-                    if(a[i] + b[j] == v)
+                    Console.WriteLine("i: " + i);
+                    Console.WriteLine("a[i] " + a[i]);
+                    Console.WriteLine("b[j] " + b[j]);
+                    Console.WriteLine();
+                    if (a[i] + b[j] == v)
                     {
+                        // Console.WriteLine("a[i] " + a[i]);
+                        //Console.WriteLine("b[j] " + b[j]);
                         return true;
                     }
                 }
             }
+
+            return false;
             return false;
         }
 
