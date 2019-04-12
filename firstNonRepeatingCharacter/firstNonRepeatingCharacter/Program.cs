@@ -12,6 +12,7 @@ namespace firstNonRepeatingCharacter
         {
             string s = "abacabad";
             char result = firstNotRepeatingCharacter(s);
+            Console.WriteLine("result: " + result);
         }
 
         public static char firstNotRepeatingCharacter(string s)
@@ -35,11 +36,14 @@ namespace firstNonRepeatingCharacter
             foreach(KeyValuePair<char,int> letter in words)
             {
                 Console.WriteLine("Key: {0}, Value: {1}", letter.Key, letter.Value);
-                
+                if(letter.Value == 1)
+                {
+                    return letter.Key;
+                }
 
             }
 
-            return '-';
+            return '_';
         }
 
     }
