@@ -10,7 +10,7 @@ namespace firstNonRepeatingCharacter
     {
         static void Main(string[] args)
         {
-            string s = "abacabad";
+            string s = "bcccccccccccccyb";
             char result = firstNotRepeatingCharacter(s);
             Console.WriteLine("result: " + result);
         }
