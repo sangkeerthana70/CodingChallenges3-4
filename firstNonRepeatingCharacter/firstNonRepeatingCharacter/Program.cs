@@ -11,23 +11,20 @@ namespace firstNonRepeatingCharacter
         static void Main(string[] args)
         {
             string s = "bcccccccccccccyb";
-            char result = firstNotRepeatingCharacter(s);
-            Console.WriteLine("result: " + result);
+            char result = firstNotRepeatingCharacter(s);           
         }
 
         public static char firstNotRepeatingCharacter(string s)
         {
             Dictionary <char, int> words = new Dictionary<char, int>();
             for(int i = 0; i < s.Length; i++)
-            {
-                // if the key already exists increment its value by 1
+            {               
                 if (words.ContainsKey(s[i]))
                 {
                     words[s[i]] += 1;
                 }
                 else
                 {
-                    // add the new kwy and its value pair
                     words.Add(s[i], 1);
                 }
 
@@ -40,9 +37,7 @@ namespace firstNonRepeatingCharacter
                 {
                     return letter.Key;
                 }
-
             }
-
             return '_';
         }
 
