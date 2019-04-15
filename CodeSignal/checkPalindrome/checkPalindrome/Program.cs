@@ -19,15 +19,14 @@ namespace checkPalindrome
         {
            
             char[] arr = inputString.ToCharArray();
-
-            Console.WriteLine();
+           
             Array.Reverse(arr);
             
             string s1 = String.Join("", arr);
-            //Console.WriteLine("s1: " + s1);
+            Console.WriteLine("s1: " + s1);
 
-            //Console.WriteLine(String.Equals(inputString, s1));
-            //Console.WriteLine("s1 = {0}, inputString = {1}",s1,inputString);
+            Console.WriteLine(String.Equals(inputString, s1));
+            Console.WriteLine("s1 = {0}, inputString = {1}",s1,inputString);
             return String.Equals(inputString, s1);
         }
 
