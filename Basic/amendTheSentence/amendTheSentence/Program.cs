@@ -20,15 +20,14 @@ namespace amendTheSentence
             StringBuilder sb = new StringBuilder();
             
             foreach (char letter in s)
-            {
-
-                if (char.IsUpper(letter) && (sb.Length != 0))
+            {                
+                if (char.IsUpper(letter))
                 {              
                     sb.Append(' ');
                 }                
                 sb.Append(letter);
             }
-            return sb.ToString().ToLower();
+            return sb.ToString().ToLower().TrimStart();
             
         }
 
