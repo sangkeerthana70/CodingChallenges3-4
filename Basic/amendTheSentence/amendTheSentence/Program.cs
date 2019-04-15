@@ -17,21 +17,21 @@ namespace amendTheSentence
         }
         public static string amendTheSentence(string s)
         {
-            /*
+            
             StringBuilder sb = new StringBuilder();
             
             foreach (char letter in s)
-            {                
+            {               
                 if (char.IsUpper(letter))
                 {              
                     sb.Append(' ');
                 }                
-                sb.Append(letter);
+                sb.Append(letter);               
             }
             return sb.ToString().ToLower().TrimStart();
-            */
+            
 
-            return string.Concat(s.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).ToLower().TrimStart();
+            //return string.Concat(s.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).ToLower().TrimStart();
 
         }
 
