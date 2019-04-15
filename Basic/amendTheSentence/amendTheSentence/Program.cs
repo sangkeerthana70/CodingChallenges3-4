@@ -24,20 +24,12 @@ namespace amendTheSentence
 
                 if (char.IsUpper(letter) && (sb.Length != 0))
                 {
-                    Console.WriteLine("letter: " + letter);
-                    //char lower = Char.ToLower(letter);
-
-                    //Console.WriteLine("letter after change: " + lower);
-                    //sb.Replace(letter, Char.ToLower(letter));
+                    //Console.WriteLine("letter: " + letter);                    
                     sb.Append(' ');
-                }
-
-                
+                }                
                 sb.Append(letter);
             }
-
-             
-             return sb.ToString().ToLower();
+            return sb.ToString().ToLower();
             
         }
 
