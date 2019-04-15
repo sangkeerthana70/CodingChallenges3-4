@@ -23,8 +23,7 @@ namespace amendTheSentence
             {
 
                 if (char.IsUpper(letter) && (sb.Length != 0))
-                {
-                    //Console.WriteLine("letter: " + letter);                    
+                {              
                     sb.Append(' ');
                 }                
                 sb.Append(letter);
