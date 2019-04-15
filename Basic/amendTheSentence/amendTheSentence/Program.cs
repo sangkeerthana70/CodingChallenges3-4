@@ -18,17 +18,27 @@ namespace amendTheSentence
         public static string amendTheSentence(string s)
         {
             StringBuilder sb = new StringBuilder();
-
-            foreach(char letter in s)
+            
+            foreach (char letter in s)
             {
-                if (char.IsUpper(letter))
+
+                if (char.IsUpper(letter) && (sb.Length != 0))
                 {
+                    Console.WriteLine("letter: " + letter);
+                    //char lower = Char.ToLower(letter);
+
+                    //Console.WriteLine("letter after change: " + lower);
+                    //sb.Replace(letter, Char.ToLower(letter));
                     sb.Append(' ');
                 }
+
+                
                 sb.Append(letter);
             }
 
-            return sb.ToString();
+             
+             return sb.ToString().ToLower();
+            
         }
 
     }
