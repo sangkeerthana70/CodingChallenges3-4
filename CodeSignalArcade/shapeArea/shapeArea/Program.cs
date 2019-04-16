@@ -30,12 +30,12 @@ namespace shapeArea
 
             
             oldArea = shapeArea(n - 1);
-            Console.WriteLine("oldArea: " + oldArea);
+            
             append1InterestingPolygon = (n - 1) * sides;
-            Console.WriteLine("no of squares to append: " + append1InterestingPolygon);
+            
             area = append1InterestingPolygon + oldArea;
             return area;
-            //pattern of +4 to every increase in n has to be solved yet, execution time to be improved
+            // pattern increase of +4 in area with each value of n
 
         }
 
