@@ -30,9 +30,9 @@ namespace shapeArea
 
             
             oldArea = shapeArea(n - 1);
-            
+            Console.WriteLine("oldArea: " + oldArea);
             append1InterestingPolygon = (n - 1) * sides;
-            
+            Console.WriteLine("appendInterestingPolygon: " + append1InterestingPolygon);
             area = append1InterestingPolygon + oldArea;
             return area;
             // pattern increase of +4 in area with each value of n
