@@ -16,13 +16,38 @@ namespace sortByLength
               "a",
               "zz" };
             string[] result = sortByLength(inputArray);
+            Console.WriteLine(String.Join(",", result));
         }
 
         static string[] sortByLength(string[] inputArray)
         {
-            string[] result = new string[] { };
+            
+           
+            for(int j = 0; j < inputArray.Length; j++)
+            {
+                for (int i = 0; i < inputArray.Length - 1; i++)
+                {
 
-            return  result;
+                    if (inputArray[i].Length > inputArray[i + 1].Length)
+                    {
+                        Console.WriteLine("inside if");
+                        string temp = inputArray[i];
+                        Console.WriteLine("temp: " + temp);
+                        inputArray[i] = inputArray[i + 1];
+                        Console.WriteLine("inputArray[i] " + inputArray[i]);
+                        inputArray[i + 1] = temp;
+                        Console.WriteLine("inputArray[i+1] " + inputArray[i + 1]);
+
+                    }
+                    
+                }
+                Console.WriteLine(String.Join(",", inputArray));
+            }
+            
+           
+            
+
+            return inputArray;
         }
 
     }
