@@ -10,7 +10,7 @@ namespace isSumOfConsecutine2
     {
         static void Main(string[] args)
         {
-            int n = 15;
+            int n = 25;
             int result = isSumOfConsecutive2(n);
             Console.WriteLine("result: " + result);
         }
@@ -26,26 +26,21 @@ namespace isSumOfConsecutine2
             for (int i = 1; i < n; i++)
             {
                 int sum = 0;
-                Console.WriteLine("i is: " + i);
                 for (int j = i; j < n; j++)
                 {
                     sum += j;
                     if (sum == n)
                     {
-                        Console.WriteLine("sum: " + sum);
+                        
                         combination += 1;
-                        Console.WriteLine("combination: " + combination);
                     }
                     if (sum > n)
                     {
                         break;
                     }
                 }
-                Console.WriteLine("sum: " + sum);
             }
             return combination;
-
         }
-
     }
 }
