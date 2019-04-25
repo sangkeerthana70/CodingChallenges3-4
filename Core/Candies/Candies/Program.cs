@@ -24,6 +24,7 @@ namespace Candies
 
         static int candies(int n, int m)
         {
+            /*
             //Math.round(Converts the values to a double data type and we have to explicitly convert values of m and n to a Decimal
             //to then convert it to a Integer.
             decimal candiesEaten = Math.Round(Convert.ToDecimal(m / n));
@@ -33,6 +34,9 @@ namespace Candies
            
 
             return Convert.ToInt32(candiesEaten) * n;
+            */
+
+            return (m / n) * n;
         }
 
     }
