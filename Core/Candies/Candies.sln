@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Candies", "Candies\Candies.csproj", "{EDD003E4-C6A4-4DA8-9C71-BACA04B55061}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicsShop", "..\..\..\Hackkerank\Algorithms\ElectronicsShop\ElectronicsShop\ElectronicsShop.csproj", "{F14C64CA-EB11-4714-B23F-741996893B40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +17,15 @@ Global
 		{EDD003E4-C6A4-4DA8-9C71-BACA04B55061}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDD003E4-C6A4-4DA8-9C71-BACA04B55061}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDD003E4-C6A4-4DA8-9C71-BACA04B55061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14C64CA-EB11-4714-B23F-741996893B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14C64CA-EB11-4714-B23F-741996893B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14C64CA-EB11-4714-B23F-741996893B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14C64CA-EB11-4714-B23F-741996893B40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C1EE922E-7BDD-486D-B5B9-ACFC67F6CE49}
+		SolutionGuid = {8DEF9749-6A41-49B4-8950-C96C32C670DB}
 	EndGlobalSection
 EndGlobal
