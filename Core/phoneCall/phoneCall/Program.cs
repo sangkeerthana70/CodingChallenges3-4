@@ -49,20 +49,7 @@ namespace phoneCall
             minutes += runningBalance / min11;
             return minutes;
 
-            /*
-            int firstMinute = Math.Abs(s - min1);
-            Console.WriteLine("first: " + firstMinute);
-            int minutes2Through10 = Math.Abs(min2_10* 9);
-            Console.WriteLine("second : " + minutes2Through10);
-            int  minutes11= minutes2Through10 / min11;
-            Console.WriteLine("minutes11: " + minutes11);
-            int remainingMinutes = 1 + minutes2Through10 + minutes11;
-            if (remainingMinutes > s)
-            {
-                return 0;
-            }
-            return remainingMinutes;
-            */
+           
 
         }
     }
