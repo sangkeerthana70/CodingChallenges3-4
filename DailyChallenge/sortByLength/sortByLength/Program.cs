@@ -27,20 +27,20 @@ namespace sortByLength
         static string[] sortByLength(string[] inputArray)
         {
             Console.WriteLine(String.Join(",", inputArray));
-
+            
             for (int j = 0; j < inputArray.Length; j++)
-            {
+            {             
                 for (int i = 0; i < inputArray.Length - 1; i++)
                 {
+                    
                     if (inputArray[i].Length > inputArray[i + 1].Length)
                     {                      
                         string temp = inputArray[i];
                         inputArray[i] = inputArray[i + 1];
-                        inputArray[i + 1] = temp;
+                        inputArray[i + 1] = temp;                       
                     }
                     
-                }
-                
+                }                              
             }
             //Console.WriteLine(String.Join(",", inputArray));
             return inputArray;
