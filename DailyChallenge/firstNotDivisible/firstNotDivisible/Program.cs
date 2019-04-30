@@ -20,13 +20,9 @@ namespace firstNotDivisible
             int numNotDivisible = 0;
             for(int i = 0; i < divisors.Length; i++)
             {
-                Console.WriteLine("start: " + start);
-                Console.WriteLine("i is: " + i);
-                Console.WriteLine("divisors[i]: " + divisors[i]);
                 if(start % divisors[i] != 0)
                 {
-                    Console.WriteLine("in If");
-                    Console.WriteLine("mod result: " + start % divisors[i]);
+                    //Console.WriteLine("mod result: " + start % divisors[i]);
                     numNotDivisible = start;
                     return numNotDivisible;
                 }
