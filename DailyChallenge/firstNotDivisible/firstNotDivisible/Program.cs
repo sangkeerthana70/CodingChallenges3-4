@@ -10,26 +10,33 @@ namespace firstNotDivisible
     {
         static void Main(string[] args)
         {
-            int[] divisors = { 3 };
-            int start = 123;
+            int[] divisors = { 2, 3, 4 };
+            int start = 14;
             int result = firstNotDivisible(divisors, start);
             Console.WriteLine("result: " + result);
         }
         static int firstNotDivisible(int[] divisors, int start)
         {
-            int numNotDivisible = 0;
-            for(int i = 0; i < divisors.Length; i++)
-            {
-                if(start % divisors[i] != 0)
+            
+           while(start <= 150)
+           {
+                Console.WriteLine("start: " + start);
+                bool divisible = false;
+                for (int i = 0; i < divisors.Length; i++)
                 {
-                    //Console.WriteLine("mod result: " + start % divisors[i]);
-                    numNotDivisible = start;
-                    return numNotDivisible;
+                    if (start % divisors[i] == 0)
+                    {
+                        divisible = true;
+                        continue;
+                    }
                 }
-                start++;
-            }
+                if (divisible == false)
+                {
+                    return start;
+                }
+                start++; 
+           }
             return start;
         }
-
-    }
+    }    
 }
