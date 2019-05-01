@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "findEmailDomain", "findEmailDomain\findEmailDomain.csproj", "{772C8A2C-CEA0-4442-ADF0-28E4B77CDB93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{772C8A2C-CEA0-4442-ADF0-28E4B77CDB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772C8A2C-CEA0-4442-ADF0-28E4B77CDB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772C8A2C-CEA0-4442-ADF0-28E4B77CDB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772C8A2C-CEA0-4442-ADF0-28E4B77CDB93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C94EB5EE-49C5-4583-AE2C-B0467C5103D8}
+	EndGlobalSection
+EndGlobal
