@@ -10,8 +10,8 @@ namespace markAndToys
     {
         static void Main(string[] args)
         {
-            int k = 15;
-            int[] prices = new int[] { 3, 7, 2, 9, 4 };
+            int k = 50;
+            int[] prices = new int[] { 1, 12, 5, 111, 200, 1000, 10 };
             int result = maximumToys(prices, k);
             Console.WriteLine("result : " + result);
         }
