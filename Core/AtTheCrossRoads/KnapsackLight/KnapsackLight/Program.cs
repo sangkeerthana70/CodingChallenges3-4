@@ -17,41 +17,40 @@ namespace KnapsackLight
             int maxW = 2;
             Console.WriteLine(knapsackLight(v1, wt1, v2, wt2, maxW));
         }
+        /*
+         * You found two items in a treasure chest! The first item weighs weight1 and is worth 
+         * value1, and the second item weighs weight2 and is worth value2. What is the total 
+         * maximum value of the items you can take with you, assuming that your max weight 
+         * capacity is maxW and you can't come back for the items later?
+         * 
+         */
+
         static int knapsackLight(int value1, int weight1, int value2, int weight2, int maxW)
         {
-            int maximumValue = 0;
-            if(weight1 + weight2 > maxW)
+            if (weight1 + weight2 <= maxW)
             {
-                maximumValue = Math.Max(value1, value2);
+                return value1 + value2;
             }
-            if(weight1 + weight2 == maxW)
-            {
-                maximumValue = value1 + value2;
-            }
-            if((weight1  > maxW) || (weight2 > maxW))
-            {
-                maximumValue = 0;
-            }
-            if(weight1 == maxW)
-            {
-                if((value1 < maxW))
-                {
-                    maximumValue = value2;
-                }
-                else
-                   maximumValue = value1;
-            }
-            if (weight2 == maxW)
-            {
-                if ((value2 < maxW))
-                {
-                    maximumValue = value1;
-                }
-                else                  
-                    maximumValue = value2;
-            }
-            return maximumValue;
 
+
+            if ((weight1 > maxW) && (weight2 > maxW))
+            {
+                return 0;
+
+            }
+
+            if ((maxW >= weight1) && (maxW >= weight2))
+            {
+                return Math.Max(value1, value2);
+
+            }
+
+            if (maxW >= weight1)
+            {
+                return value1;
+            }
+
+            return value2;
 
         }
 
