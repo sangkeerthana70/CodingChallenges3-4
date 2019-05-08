@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomIndexOfFunctions", "CustomIndexOfFunctions\CustomIndexOfFunctions.csproj", "{CC824C98-157F-4E01-8377-E35282AB2D11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC824C98-157F-4E01-8377-E35282AB2D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC824C98-157F-4E01-8377-E35282AB2D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC824C98-157F-4E01-8377-E35282AB2D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC824C98-157F-4E01-8377-E35282AB2D11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DA4FF0B-A377-41C0-B07C-BCE6C79C947B}
+	EndGlobalSection
+EndGlobal
