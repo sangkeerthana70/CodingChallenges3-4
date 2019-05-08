@@ -11,20 +11,28 @@ namespace CustomIndexOfFunctions
         static void Main(string[] args)
         {
             int[] arr = new int[] { 7, 25, 21, 3, 25, 7 };
-            int val = 0;
+            int val = 21;
             int result = FindIndexOfVal(arr, val);
             Console.WriteLine("result: " + result);
         }
         static int FindIndexOfVal(int[] arr, int val)
         {
-            for(int i = 0; i < arr.Length; i++)
+            bool foundIndex = false;
+            int i = 0;
+            for (i = 0; i < arr.Length; i++)
             {
                 if(arr[i] == val)
                 {
-                    return i;
+                    foundIndex = true;
+                    break;
                 }
             }
-            return -1;
+            if(foundIndex == true)
+            {
+                return i;
+            }
+            else
+                 return -1;
         }
 
     }
