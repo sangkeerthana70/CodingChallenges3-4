@@ -18,11 +18,7 @@ namespace percentageGreen
 
         static int percentageGreen(int green, int total)
         {
-
-            
-
             double percentage = ((double)green / total) * 100;
-
             Console.WriteLine(percentage);
             return (int)percentage;
         }
