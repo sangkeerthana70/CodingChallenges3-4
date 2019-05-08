@@ -12,8 +12,11 @@ namespace CustomIndexOfFunctions
         {
             int[] arr = new int[] { 7, 25, 21, 3, 25, 7 };
             int val = 21;
+            int val2 = 7;
             int result = FindIndexOfVal(arr, val);
             Console.WriteLine("result: " + result);
+            int result2 = FindLastIndexOfVal(arr, val2);
+            Console.WriteLine("result2: " + result2);
         }
         static int FindIndexOfVal(int[] arr, int val)
         {
@@ -33,6 +36,20 @@ namespace CustomIndexOfFunctions
             }
             else
                  return -1;
+        }
+
+        static int FindLastIndexOfVal(int [] arr, int val)
+        {
+            int i = 0;
+            int tempi = -1;
+            for(i = 0; i < arr.Length; i++)
+            {
+                if(arr[i] == val)
+                {
+                    tempi = i;
+                }
+            }
+            return tempi;
         }
 
     }
