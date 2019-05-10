@@ -22,7 +22,7 @@ namespace replaceMiddle
             
             int arrLength = arrToList.Count;
             
-           
+           // if length is odd
             if (arrLength % 2 != 0)
             {
                 return arrToList.ToArray();
@@ -30,19 +30,10 @@ namespace replaceMiddle
             //if length is even
             else
             {
-           
-                //Console.WriteLine("Middle element1: " + arrToList[(arrLength / 2) - 1]);
-                //Console.WriteLine("Middle element2: " + arrToList[arrLength / 2]);
-                
-                //Console.WriteLine("ArrToList: " + String.Join(",", arrToList));
-                arrToList[(arrLength / 2) - 1] = arrToList[(arrLength / 2) - 1] + arrToList[arrLength / 2];
-                //Console.WriteLine("ArrToList: " + String.Join(",", arrToList));
+                arrToList[(arrLength / 2) - 1] = arrToList[(arrLength / 2) - 1] + arrToList[arrLength / 2];               
                 arrToList.RemoveAt(arrLength / 2);
-                //Console.WriteLine("ArrToList: " + String.Join(",", arrToList));
-
             }
             return arrToList.ToArray();
-
         }
 
     }
