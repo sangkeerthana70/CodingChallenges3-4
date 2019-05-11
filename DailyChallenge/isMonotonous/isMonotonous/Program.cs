@@ -35,11 +35,8 @@ namespace isMonotonous
             for(int i = 0; i < sequence.Length - 1; i++)
             {
                 // if not strictly increasing 
-                if (!(sequence[i] < sequence[i + 1]) && order == false || (sequence[i] == sequence[i + 1]))
+                if ((!(sequence[i] < sequence[i + 1])) && order == false || (sequence[i] == sequence[i + 1]))
                 {
-                    Console.WriteLine("In if");
-
-
                     return false;
                 }
             }
