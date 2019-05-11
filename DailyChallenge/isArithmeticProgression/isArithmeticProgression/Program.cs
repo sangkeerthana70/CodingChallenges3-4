@@ -10,24 +10,24 @@ namespace isArithmeticProgression
     {
         static void Main(string[] args)
         {
-            int[] sequence = { 2, 4, 7 };
+            int[] sequence = { 1, 3, 1 };
             bool result = isArithmeticProgression(sequence);
             Console.WriteLine("result: " + result);
         }
 
         static bool isArithmeticProgression(int[] sequence)
         {
-
+            int difference =  (sequence[0] - sequence[1]);          
             for (int num = 0; num < sequence.Length - 1; num++)
             {
-
-                if ((Math.Abs(sequence[num] - sequence[num + 1])) != (Math.Abs(sequence[num + 1] - sequence[num + 2])))
+                if((sequence[num] - sequence[num + 1]) != difference)
                 {
+                    //Console.WriteLine("diff in loop : " + (sequence[num] - sequence[num + 1]));
                     return false;
                 }
+                           
             }
             return true;
         }
-
     }
 }
