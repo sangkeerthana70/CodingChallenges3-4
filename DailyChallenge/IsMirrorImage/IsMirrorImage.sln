@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsMirrorImage", "IsMirrorImage\IsMirrorImage.csproj", "{05137FFF-7B29-4CA3-B52D-8F2139961218}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MirrorImage", "IsMirrorImage\MirrorImage.csproj", "{05137FFF-7B29-4CA3-B52D-8F2139961218}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
