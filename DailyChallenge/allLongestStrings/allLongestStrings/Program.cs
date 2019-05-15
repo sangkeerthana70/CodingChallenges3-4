@@ -24,18 +24,12 @@ namespace allLongestStrings
 
             for(int i = 0; i < inputArray.Length; i++)
             {
-                Console.WriteLine("i is: " + i);
-                Console.WriteLine(inputArray[i]);
-                
                 if(inputArray[i].Length > maxLength)
                 {
-                    Console.WriteLine(inputArray[i].Length);
-                    
                     maxLength = inputArray[i].Length;
-                }
-                    
+                }                   
             }
-            Console.WriteLine("maxLength: " + maxLength);
+            //Console.WriteLine("maxLength: " + maxLength);
             foreach(string word in inputArray)
             {
                 if(word.Length == maxLength)
