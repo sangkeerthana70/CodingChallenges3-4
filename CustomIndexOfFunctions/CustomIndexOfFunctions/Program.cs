@@ -18,6 +18,7 @@ namespace CustomIndexOfFunctions
             int result2 = FindLastIndexOfVal(arr, val2);
             Console.WriteLine("result2: " + result2);
         }
+
         static int FindIndexOfVal(int[] arr, int val)
         {
             bool foundIndex = false;
