@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,24 +16,29 @@ namespace matrixElementsSum
             matrix[1] = new int[] { 0, 5, 0, 1 };
             matrix[2] = new int[] { 2, 1, 3, 10 };
             int result = matrixElementsSum(matrix);
+            Console.WriteLine(result);
         }
 
         static int matrixElementsSum(int[][] matrix)
         {
-            Console.WriteLine("rows: " + matrix.GetLength(0));
-            
             int sum = 0;
-            for(int row = 0; row < matrix.GetLength(0); row++)
+            
+
+            int floors = matrix.Length;
+            // since it is a rectangular matrix
+            int rooms = matrix[0].Length;
+
+            Console.WriteLine("floors = {0}; rooms = {1}",floors,rooms);
+
+            for (int i = 0; i < rooms; i++)
             {
-                int[] floor = matrix[row];
-                for (int column = 0; column < floor.Length; column++)
+                for (int j = 0; j < floors; j ++)
                 {
-                    
-                    if(matrix[row][column] != 0)
+                    if (matrix[j][i] == 0)
                     {
-                        sum += matrix[row][column];
-                        Console.WriteLine("sum: " + sum);
+                        break;
                     }
+                    sum += matrix[j][i];
                 }
             }
             return sum;
