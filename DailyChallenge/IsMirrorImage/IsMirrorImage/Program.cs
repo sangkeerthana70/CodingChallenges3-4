@@ -39,6 +39,7 @@ namespace MirrorImage
             int uncommonChar = 0;
             for (int i = 0; i < subStrLength; i++)
             {
+                // check if first char in first string is the last char in second string
                 if (!(subStr1[i] == subStr2[subStrLength - (i + 1)]))
                 {
                     uncommonChar++;
