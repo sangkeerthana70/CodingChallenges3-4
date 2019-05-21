@@ -1,0 +1,5 @@
+﻿for every array (matrix[0].length)that represents the row in the jagged array, 
+get the corresponding column element in relation to the first element in the first array. 
+
+Outer loop represents the rows in a jagged array and inner loop gets the column for a given row.
+So if any row count  matches the argument(int column) it gets all the elements for that corresponding column
