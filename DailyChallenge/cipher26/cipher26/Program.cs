@@ -12,34 +12,30 @@ namespace cipher26
         {
             string message = "thisisencryptedmessage";
             string result = cipher26(message);
-
+            Console.WriteLine("result " + result);
         }
         static string cipher26(string message)
         {
-            
             int alphaIndex = 0;
-            
-            
-            char letter = ' ';
-            string encrpt = "";
-            List<char> decryptMessage = new List<char>();
+            char output = ' ';
+            int convertBack = 0;
+            string outputString = "";
             for(int i = 0; i < message.Length; i++)
             {
-                Console.WriteLine("i = " + i);
-                Console.WriteLine("message[i] = " + message[i] + " " + (int)message[i]);
-                alphaIndex = Math.Abs(message[i] - 'a') ;
-                Console.WriteLine("alphaIndex = " + alphaIndex);
+                Console.WriteLine("i is: " + i);
+                Console.WriteLine("message[i] is: " + message[i]);
+                alphaIndex = Math.Abs(message[i] - 'a');
+                Console.WriteLine("alpha: " + alphaIndex);
 
-                //decipherIndex.Add((char)alphaIndex);
-                letter = ((char)(alphaIndex % 26 + 'a'));
-                
-                encrpt += letter % 26;
-                Console.WriteLine("encrypt: " + encrpt);
-                
+                convertBack = (convertBack + alphaIndex) % 26;
+                Console.WriteLine("convertBack " + convertBack);
+                output = (char)(convertBack + 'a');
+                Console.WriteLine("output: " + output);
+                outputString += output;
+                Console.WriteLine("result: " + outputString);
             }
-            Console.WriteLine("decryptMessage : " + String.Join(",", decryptMessage));
-
-            return "";
+            
+            return outputString;
         }
 
     }
