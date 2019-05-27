@@ -10,7 +10,7 @@ namespace arrayMaximalDifference
     {
         static void Main(string[] args)
         {
-            int[] inputArray = { 1, -4, 10, -3, 12 };
+            int[] inputArray = { 19, 32, 11, 23 };
             int result = arrayMaximalDifference(inputArray);
             Console.WriteLine("result: " + result);
         }
@@ -21,13 +21,13 @@ namespace arrayMaximalDifference
             int maxDiff = 0;
             for (int j = 0; j < inputArray.Length; j++)
             {
-                Console.WriteLine("inputARray[j] : " + inputArray[j]);
+                //Console.WriteLine("inputARray[j] : " + inputArray[j]);
                 for (int i = j + 1; i < inputArray.Length; i++)
                 {
-                    Console.WriteLine("inputARray[i] : " + inputArray[i]);
-                    Console.WriteLine("maxValue " + maxValue);
+                    //Console.WriteLine("inputARray[i] : " + inputArray[i]);
+                    //Console.WriteLine("maxValue " + maxValue);
                     maxDiff = Math.Abs(inputArray[j] - inputArray[i]);
-                    Console.WriteLine("maxDiff " + maxDiff);
+                    //Console.WriteLine("maxDiff " + maxDiff);
                     if (maxValue < maxDiff)
                     {
                         maxValue = maxDiff;
