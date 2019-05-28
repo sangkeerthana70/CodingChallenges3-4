@@ -15,27 +15,34 @@ namespace arrayMaximalDifference
             Console.WriteLine("result: " + result);
         }
 
+        /*
+           Given an array of integers, find the maximal difference(difference of minimum and
+           maximum values in the array) among all possible pairs of its elements.
+          */
+
         static int arrayMaximalDifference(int[] inputArray)
         {
-            int maxValue = inputArray[0];
-            int maxDiff = 0;
-            for (int j = 0; j < inputArray.Length; j++)
-            {
-                //Console.WriteLine("inputARray[j] : " + inputArray[j]);
-                for (int i = j + 1; i < inputArray.Length; i++)
-                {
-                    //Console.WriteLine("inputARray[i] : " + inputArray[i]);
-                    //Console.WriteLine("maxValue " + maxValue);
-                    maxDiff = Math.Abs(inputArray[j] - inputArray[i]);
-                    //Console.WriteLine("maxDiff " + maxDiff);
-                    if (maxValue < maxDiff)
-                    {
-                        maxValue = maxDiff;
-                    }
+            int maxValue = Int32.MinValue;
+            int minValue = Int32.MaxValue;
 
+
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                if (inputArray[i] > maxValue)
+                {
+                    maxValue = inputArray[i];
                 }
-                
+                if (inputArray[i] < minValue)
+                {
+                    minValue = inputArray[i];
+                }
+
             }
+
+            return maxValue - minValue;
+
+
+
 
             return maxValue;
         }
