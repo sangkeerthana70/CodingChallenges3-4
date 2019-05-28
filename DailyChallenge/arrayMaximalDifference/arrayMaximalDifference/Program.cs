@@ -22,6 +22,7 @@ namespace arrayMaximalDifference
 
         static int arrayMaximalDifference(int[] inputArray)
         {
+            /*
             int maxValue = Int32.MinValue;
             int minValue = Int32.MaxValue;
 
@@ -40,11 +41,12 @@ namespace arrayMaximalDifference
             }
 
             return maxValue - minValue;
+            */
+            return inputArray.Max() - inputArray.Min();
 
 
 
 
-            return maxValue;
         }
 
     }
