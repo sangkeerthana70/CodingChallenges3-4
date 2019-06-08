@@ -30,12 +30,12 @@ namespace reversedOrder
         {
             public static int ReversedOrder(int num)
             {
-                int reverse = 0;                
+                int reverse = 0;            
                 while(num > 0)
-                {                                     
-                    reverse = (reverse * 10) + num % 10;                   
-                    num = num / 10;
-                }                
+                {                    
+                    reverse = (reverse * 10) + num % 10;                    
+                    num = num / 10;                   
+                }               
                 return reverse;
             }
         }
