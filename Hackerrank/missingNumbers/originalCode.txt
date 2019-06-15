@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace missingNumbers
-{
-    class Program
+   class Program
     {
         static void Main(string[] args)
         {
@@ -93,7 +85,7 @@ namespace missingNumbers
                     if (!lostList.ContainsKey(item.Key))
                     {
  
-                        Console.WriteLine("inside lostList");
+                        //Console.WriteLine("inside lostList");
                         lostList.ContainsValue(item.Value);
                         Console.WriteLine("lostList value:" + lostList.ContainsValue(item.Value) + " " + item.Key);
                         result.Add(item.Key);
