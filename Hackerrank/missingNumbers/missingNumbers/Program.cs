@@ -10,8 +10,10 @@ namespace missingNumbers
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[] { 7, 2, 5, 3, 5, 3 };
-            int[] brr = new int[] { 7, 2, 5, 4, 6, 3, 5, 3 };
+            //int[] arr = new int[] { 203, 204, 205, 206, 207, 208, 203, 204, 205, 206 };
+            //int[] brr = new int[] { 203, 204, 204, 205, 206, 207, 205, 208, 203, 206, 205, 206, 204 };
+            int[] arr = new int[] { 11, 4, 11, 7, 13, 4, 12, 11, 10, 14 };
+            int[] brr = new int[] { 11, 4, 11, 7, 3, 7, 10, 13, 4, 8, 12, 11, 10, 14, 12 };
             int [] result = missingNumbers(arr, brr);
             Console.WriteLine("result: " + String.Join(",", result));
         }
@@ -41,7 +43,7 @@ namespace missingNumbers
                 Console.WriteLine("lostList key = {0} value = {1}", pair.Key, pair.Value);
             }
 
-            for(int j = 0; j < brr.Length; j++)
+            for (int j = 0; j < brr.Length; j++)
             {
                 if (originalList.ContainsKey(brr[j]))
                 {
@@ -58,39 +60,68 @@ namespace missingNumbers
                 Console.WriteLine("originalList key = {0} value = {1}", pair.Key, pair.Value);
             }
 
-            bool equal = false;
+
             if (originalList.Count == lostList.Count)
             {
-                Console.WriteLine("inside comparing dictionaries count");
-                
-            }
-            else
-            {
-                equal = true;
-                int diff;
-                
-                foreach (KeyValuePair<int, int> item in originalList)
-                {
-                    
-                    // Console.WriteLine("inside compare dicts");
-                    //originalList.TryGetValue(item.Key, out int value);
-                    // Console.WriteLine("value of item.Key: " + value + " " + item.Key);
-                    Console.WriteLine("=========================================================================");
+                Console.WriteLine("inside if - dictionaries count match");
+               
+               foreach(var item in lostList)
+               {
+                    lostList.TryGetValue(item.Key, out int value);
+                    //Console.WriteLine("item.Key = {0} , item.Value = {1} ", item.Key, value);
+                    originalList.TryGetValue(item.Key, out int value2);
+                    //Console.WriteLine("item.Key = {0} , item.Value = {1} ", item.Key, value2);
 
-                    Console.WriteLine(lostList.ContainsKey(item.Key));
-                    if (!(lostList.ContainsKey(item.Key)))
+                    int valueDifference = value2 - value;
+                    Console.WriteLine("diff: " + valueDifference);
+
+                    if(valueDifference >= 1)
                     {
-                        Console.WriteLine("inside lostList");
-                        lostList.ContainsValue(item.Value);
-                        Console.WriteLine("lostList value:" + lostList.ContainsValue(item.Value) + " " +  item.Key);
                         result.Add(item.Key);
-                       
                     }
 
                 }
             }
+            else
+            {
+                Console.WriteLine("inside else - dictionaries count not match");
+               
+                foreach (KeyValuePair<int, int> item in originalList)
+                {
+                    
+                    Console.WriteLine(lostList.ContainsKey(item.Key));
+                    if (!lostList.ContainsKey(item.Key))
+                    {
+ 
+                        Console.WriteLine("inside lostList");
+                        lostList.ContainsValue(item.Value);
+                        Console.WriteLine("lostList value:" + lostList.ContainsValue(item.Value) + " " + item.Key);
+                        result.Add(item.Key);
+                    }
+                    else
+                    {
+                        lostList.TryGetValue(item.Key, out int value);
+                        //Console.WriteLine("item.Key = {0} , item.Value = {1} ", item.Key, value);
+                        originalList.TryGetValue(item.Key, out int value2);
+                        //Console.WriteLine("item.Key = {0} , item.Value = {1} ", item.Key, value2);
 
+                        int valueDifference = value2 - value;
+                        Console.WriteLine("diff: " + valueDifference);
 
+                        if (valueDifference >= 1)
+                        {
+                            result.Add(item.Key);
+                        }
+                    }
+                }
+            }
+            
+            foreach(int num in result)
+            {
+                Console.WriteLine("num: " + num);
+            }
+
+            result.Sort();
             return result.ToArray();
         }
     }
