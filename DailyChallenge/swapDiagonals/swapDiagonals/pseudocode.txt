@@ -1,0 +1,35 @@
+ /* 
+        need just one loop to iterate over the row 
+
+        constraint says matrix.length = matrix[i].length which means rows and columns are same.
+
+        since we swap elements on the right diagonal with the left diagonal in the same row.
+
+        to swap find an offset that is [row][col = length - row] for each  row.
+
+        calculate length of matrix which is the row to subtract the column offset from right.
+        */
+
+        static int[][] swapDiagonals(int[][] matrix)
+        {
+            int length = matrix.Length-1;// rowLength -1
+            Console.WriteLine("length: " + length);
+
+
+            for(int row = 0; row <= length; row++)
+            {
+                //for(int col = 0; col < matrix[row].Length; col++)
+                //{
+                    Console.WriteLine("row = {0}, col = {1} " , row, row);
+                    int swap = matrix[row][row];
+                    Console.WriteLine("swap " + swap);
+                    matrix[row][row] = matrix[row][length - row];
+                    Console.WriteLine("matrix[row][col] " + matrix[row][row]);
+                    matrix[row][length - row] = swap;
+                    Console.WriteLine("matrix[row][length - row] " + matrix[row][length - row]);
+                    //matrix[row + 1][col + 1] = matrix[row][length - row];
+                    //matrix[row + 2][col + 2] = matrix[row][length - row];
+                    //}
+            }
+            return matrix;
+            
