@@ -11,15 +11,14 @@ namespace minimalNumberOfCoins
         static void Main(string[] args)
         {
             int price = 28;
-            int[] coins = { 1, 2, 10 };
+            int[] coins = { 1, 2, 10};
             int coinsNeeded = minimalNumberOfCoins(coins, price);
             Console.WriteLine(coinsNeeded);
         }
 
         static int minimalNumberOfCoins(int[] coins, int price)
         {
-            //Console.WriteLine("coins[0] " + coins[coins.Length - 1]);
-            
+ 
             int remainder = price;
 
             int coinsNeeded = 0;
@@ -45,9 +44,9 @@ namespace minimalNumberOfCoins
                     {
                         Console.WriteLine("remainder: " + remainder);
                         Console.WriteLine("coins[i]: " + coins[i]);
-                        coinsNeeded += price / coins[i];
+                        coinsNeeded += remainder / coins[i];
                         Console.WriteLine("coinsNeeded: " + coinsNeeded);
-                        remainder = price % coins[i];
+                        remainder = remainder % coins[i];
                         Console.WriteLine("remainder: " + remainder);
                     }
                 }
