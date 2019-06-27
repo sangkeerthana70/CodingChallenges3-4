@@ -25,9 +25,9 @@ namespace minimalNumberOfCoins
 
             while (remainder != 0)
             {
+                // loop starts at the last element since we want to largest element to divide the price with
                 for (int i = coins.Length - 1; i > 0; i--)
                 {
-                    Console.WriteLine("i : " + i);
                     if (remainder == 0)
                     {
                         return coinsNeeded;
@@ -35,23 +35,17 @@ namespace minimalNumberOfCoins
 
                     if (remainder < coins[i])
                     {
-                        Console.WriteLine("remainder: " + remainder);
-                        Console.WriteLine("coins[i]: " + coins[i]);
                         continue;
                     }
 
                     if (remainder >= coins[i])
-                    {
-                        Console.WriteLine("remainder: " + remainder);
-                        Console.WriteLine("coins[i]: " + coins[i]);
+                    {                        
                         coinsNeeded += remainder / coins[i];
-                        Console.WriteLine("coinsNeeded: " + coinsNeeded);
-                        remainder = remainder % coins[i];
-                        Console.WriteLine("remainder: " + remainder);
+                        remainder = remainder % coins[i]; 
                     }
                 }
             }
-            Console.WriteLine("coinsNeeded: " + coinsNeeded);
+
             return coinsNeeded;
 
         }
