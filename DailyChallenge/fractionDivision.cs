@@ -9,6 +9,15 @@ public class Program
 		int [] result = fractionDivision(a, b);
 		Console.WriteLine("result " + String.Join(",", result));										 
 	}
+	/*
+	
+	Implement a function that can divide two fractions and produce a reduced fraction.
+
+	Example
+
+	For a = [2, 3] and b = [5, 6], the output should be
+	fractionDivision(a, b) = [4, 5].
+	*/
 	
 	static int[] fractionDivision(int[] a, int[] b) {
 
@@ -54,6 +63,7 @@ public class Program
 }
 
 /*
+Pseudocode
  For dividing two fractions a= [2, 3] and b=[5,6]=> reduced arr[2*6 && 3*5]
  arr[12, 15]
  
