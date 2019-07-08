@@ -22,13 +22,12 @@ public class Program
 	static int[] fractionDivision(int[] a, int[] b) {
 
 		int[] reduced = new int[a.Length];
-		reduced[0] = a[0] * b[1];
-		Console.WriteLine(reduced[0]);
+		reduced[0] = a[0] * b[1];		
 		reduced[1] = a[1] * b[0];
-		Console.WriteLine(reduced[1]);
+		
 		
 		int gcd = FindGCD(reduced);
-		Console.WriteLine("gcd " + gcd);
+		//Console.WriteLine("gcd " + gcd);
 		reduced[0] /= gcd; 
 		reduced[1] /= gcd;
 		return reduced;
@@ -38,7 +37,7 @@ public class Program
 	static int FindGCD(int [] arr)
 	{
 		int minVal  = arr.Min();
-		Console.WriteLine("minVal " + minVal);
+		
 		bool divisible;
 		for(int i = arr[0]; i > 2; i--)
 		{
