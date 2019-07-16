@@ -13,7 +13,7 @@ namespace BinarySearch
             Random random = new Random();
 
             // arr will have 100 unique elements with values in range 0 to 1000
-            var arr = Enumerable.Range(0, 10000).OrderBy(x => random.Next()).Take(1000).ToArray();
+            var arr = Enumerable.Range(0, 10000).OrderBy(x => random.Next()).Take(100).ToArray();
 
             Array.Sort(arr);
 
@@ -23,10 +23,15 @@ namespace BinarySearch
             //    Console.WriteLine("i = {0};  arr[i] = {1}",i, arr[i]);
             //}
 
-            int expected = random.Next(1000);
+            int expected = random.Next(100);
             Console.WriteLine("Array Size: " + arr.Length);
             Console.WriteLine("Searching for element {0} at index {1}...", arr[expected],expected);
+            Console.WriteLine("Executing Linear Search");
+
             int actual = LinearSearch(arr, arr[expected]);
+
+            Console.WriteLine("Executing Binary Search");
+            actual = MyBinarySearch(arr, arr[expected]);
         }
 
 
@@ -50,9 +55,43 @@ namespace BinarySearch
 
         private static int MyBinarySearch(int[] arr, int searchNum)
         {
-           
 
-            return 0;
+            int index = arr.Length / 2;
+            int i = 0;
+            int prevIndex = arr.Length;
+
+            while (true)
+            {
+                Console.WriteLine("Examining element at index " + index);
+                Console.WriteLine("Expected : {0}; Found : {1}",searchNum,arr[index]);
+                if (i++ > 100) break;
+                Console.WriteLine("Loop Count : " + i);
+               
+                if(arr[index]  == searchNum)
+                {
+                    Console.WriteLine("Answer : " + index);
+                    return index;
+                }
+
+                if ((index == arr.Length) || (index == 0))
+                {
+                    break;
+                }
+
+                if(arr[index] < searchNum)
+                {
+                    Console.WriteLine("Moving right");
+                    index += (prevIndex - index) / 2;
+                }
+                else
+                {
+                    Console.WriteLine("Moving left");
+                    index -= (prevIndex - index) / 2;
+                }
+                prevIndex = index;
+            }
+
+            return -1;
         }
     }
 }
