@@ -10,29 +10,37 @@ public class Program
 	}
 	
 	static int differentDigitsNumberSearch(int[] inputArray) {
-		int nonRepeating = 0;
+		
 		for(int i = 0; i < inputArray.Length; i++)
 		{
-		   bool repeating = findNonRepeatingNumber(inputArray[i]); 
-			Console.WriteLine(repeating);
-
+		   bool repeating = findUnique(inputArray[i]); 
+			
+			if(!(repeating))
+				return inputArray[i];
+			
 		}
-    	return nonRepeating;
+		return -1;
+    
    
-}
+	}
 
-	static  bool findNonRepeatingNumber(int element)
+	 bool findUnique(int element)
 	{
 		string number = Convert.ToString(element);
-		Console.WriteLine(number);
-		for(int i = 0; i < number.Length -1 ; i++)
+		//Console.WriteLine(number);
+		for(int i = 0; i < number.Length ; i++)
 		{
-			if(number[i] == number[i+1])
+			for(int j = i+1;  j < number.Length; j++)
 			{
-				return true;
-				
+				if(number[i] == number[j])
+				{
+					return true;
+
+				}
 			}
+			
 		}
 		return false;
+
 	}
 }
