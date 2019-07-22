@@ -28,13 +28,14 @@ public class Program
 	
 	static int[] createOneDArray(int arrLen)
 	{
-		int[] 1D = new int[arrLen]{};
+		int[] oneD = new int[arrLen];
 		for(int i = 0; i < arrLen; i++)
 		{
-			1D = [i];
+			oneD[i] = i;
 		}
-		return 1D;
+		return oneD;
 	}
 
     
 }
+
