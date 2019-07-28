@@ -18,16 +18,30 @@ public class Program
 		{
 			string digitsSubString = num.Substring(i, len/2);
 			Console.WriteLine(digitsSubString);
-			//FindSumOfDigits(digitsSubString);
+			int sum = FindSumOfDigits(digitsSubString);
 			i++;
 		}
 		
 		
 		return false;
 	}
-	//static int FindSumOfDigits(string digits)
-	//{
+	
+	
+	static int FindSumOfDigits(string digits)
+	{
+		int sum = 0;
+		for(int i = 0; i < digits.Length; i++)
+		{
+			Console.WriteLine(digits.Length);
+			Console.WriteLine("digits[i] " + digits[i]);
+			int strToNum = Convert.ToInt32(digits[i].ToString());
+			Console.WriteLine("strToNUm " + strToNum);
+			 sum += strToNum;
+		}
+		Console.WriteLine("sum " + sum);
+		return 0;
 		
 		
-	//}
+	}
+
 }
