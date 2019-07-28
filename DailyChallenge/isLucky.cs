@@ -11,18 +11,26 @@ public class Program
 	static bool isLucky(int n) 
 	{
 		string num = n.ToString();
-		Console.WriteLine("num " + num);
+	   // Console.WriteLine("num " + num);
 		int len = num.Length;
-		Console.WriteLine("len " + len);
-		for(int i = 0; i < num.Length-1; i++)
-		{
-			string digitsSubString = num.Substring(i, len/2);
-			Console.WriteLine(digitsSubString);
-			int sum = FindSumOfDigits(digitsSubString);
-			i++;
-		}
-		
-		
+		//Console.WriteLine("len " + len);
+
+		string firstHalfDigits = num.Substring(0, len/2);
+		//Console.WriteLine("firstHalfDigits " + firstHalfDigits);
+
+		int firstHalfSum = FindSumOfDigits(firstHalfDigits);
+		//Console.WriteLine("firstHalfSum " + firstHalfSum);
+
+		string secondHalfDigits = num.Substring((len/2) , len/2);
+
+		//Console.WriteLine("secondHalfDigits " + secondHalfDigits);		
+		int secondHalfSum = FindSumOfDigits(secondHalfDigits);
+
+		//Console.WriteLine("secondHalfSum " + secondHalfSum);
+
+		if(firstHalfSum == secondHalfSum)
+			return true;
+
 		return false;
 	}
 	
@@ -39,7 +47,7 @@ public class Program
 			 sum += strToNum;
 		}
 		Console.WriteLine("sum " + sum);
-		return 0;
+		return sum;
 		
 		
 	}
