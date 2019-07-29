@@ -13,15 +13,28 @@ coolString(inputString) = false.
 */
 
 bool coolString(string inputString) {
-    inputString.Trim(' ');
-    for(int i = 0; i < inputString.Length -1; i++)
+    
+    bool result = true;
+    for(int i = 0; i < inputString.Length; i++)
     {
-        if((char.IsLower(inputString[i]) && char.IsLower(inputString[i+1])) ||
-            (char.IsUpper(inputString[i]) && char.IsUpper(inputString[i+1])))
+        if(char.IsLetter(inputString[i]))
+        {
+            if(i == inputString.Length -1){
+                break;
+            }
+            
+           if(char.IsLower(inputString[i]) && char.IsLower(inputString[i+1]) ||                         
+		   (char.IsUpper(inputString[i]) && char.IsUpper(inputString[i+1])))           
            {
-               return false;
+               result = false;
            }
+        }
+        else 
+        {
+            result = false;
+        }
+		
     }
-           
-    return true;
+    return result;
 }
+
