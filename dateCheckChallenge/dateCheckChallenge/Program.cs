@@ -15,6 +15,8 @@ namespace dateCheckChallenge
             Console.WriteLine("result :" + result);
 
         }
+
+        // Calculate the difference in time interval between two date time.
         static decimal ConvertToDecimal(DateTime input)
         {
             /* Method-1
@@ -32,12 +34,12 @@ namespace dateCheckChallenge
             return Convert.ToDecimal(decimalValOfYear + "." + decimalValOfMonth);
             */
             //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-            /*Method-2 using TimeSpan
+            /*Method-2 using TimeSpan's TotalDays property
             DateTime currentDate = DateTime.Now;
             TimeSpan difference = currentDate - input;
 
             
-            Console.WriteLine("   {0,-35} {1,20}", "Total Number of Days:", difference.TotalDays/365);
+            Console.WriteLine("Total Number of Days:", difference.TotalDays/365);
 
             //use Math.Round to get two decimal values in the decimal          
             return Math.Round(Convert.ToDecimal(difference.TotalDays / 365), 2);
@@ -45,13 +47,13 @@ namespace dateCheckChallenge
             //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
             //Method-3 
-            //if using milliseconds to calculate the difference between two years
+            //if using TimeSpan's milliseconds to calculate the difference between two years
             //millseconds/1000/60/60/24/365
             //convert milliseconds to seconds to minute to hour to days.
 
             DateTime currentDate = DateTime.Now;
             TimeSpan difference = currentDate - input;
-            Console.WriteLine("   {0,-35} {1,20:N0}", "Total Number of Milliseconds:", difference.TotalMilliseconds);
+            Console.WriteLine("Total Number of Milliseconds:", difference.TotalMilliseconds);
             double milliseconds = difference.TotalMilliseconds;
             return Math.Round(Convert.ToDecimal(milliseconds/1000/60/60/24/365), 2);
         }
