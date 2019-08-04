@@ -29,6 +29,7 @@ namespace ObjectFinder
             Key:Foo return [0,2]
             */
 
+           
             var list = new List<KeyValuePair<string, int>>();
             list.Add(new KeyValuePair<string, int>("Cliff", 32));
             list.Add(new KeyValuePair<string, int>("John", 25));
@@ -42,7 +43,8 @@ namespace ObjectFinder
                
             }
 
-            GetMatchingIndex(list);
+            int result = GetMatchingIndex(list);
+            Console.WriteLine("result " + result);
 
 
 
@@ -50,10 +52,15 @@ namespace ObjectFinder
 
         static int GetMatchingIndex(List<KeyValuePair<string, int>> data)
         {
-            foreach(var dataSet in data)
+            KeyValuePair<string, int> pair;
+            for(int i = 0; i < data.Count; i++)
             {
-                
+                pair = data[i];
+                Console.WriteLine("pair " + pair);
+                if (pair.Value == 25)
+                    return i;
             }
+            return -1;
             
         }
         
