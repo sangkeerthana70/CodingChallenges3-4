@@ -17,24 +17,28 @@ public class Program
 
     public static int pickingNumbers(int[] arr)
     {
-		int numbers = 0;
+		int validcount = 0;
 		int result = Int32.MinValue;
 		for(int i = 0; i < arr.Length; i++)
 		{
+			validcount = 0;
 			Console.WriteLine("i" + i);
-			for(int j = i+1; j < arr.Length -1; j++)
+			for(int j = 0; j < arr.Length -1; j++)
 			{
+				if (i == j) continue;
+				
 				if(Math.Abs(arr[i] - arr[j]) <= 1)
 				{
 					Console.WriteLine(arr[i]);
 					Console.WriteLine(arr[j]);
-					numbers +=1;
-					Console.WriteLine("numbers " + numbers);
+					validcount +=1;
+					Console.WriteLine("validcount " + validcount);
 				}
 			}
+			
+			if (validcount > result) result = validcount;
 		}
-		Console.WriteLine("numbers " + numbers);
-		result = numbers+1;
+		Console.WriteLine("validcount " + validcount);
 		Console.WriteLine("result " + result);
 		return result;
     }
