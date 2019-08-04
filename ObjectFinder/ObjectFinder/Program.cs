@@ -29,6 +29,16 @@ namespace ObjectFinder
             Key:Foo return [0,2]
             */
 
+            /*
+            var data = new Dictionary<string, int>
+            {
+                {"Cliff",32 },
+                {"John",25 },
+                {"Andy",32 },
+                {"Mary",21 },
+                {"Sally",25 },
+            };
+            */
            
             var list = new List<KeyValuePair<string, int>>();
             list.Add(new KeyValuePair<string, int>("Cliff", 32));
@@ -43,25 +53,46 @@ namespace ObjectFinder
                
             }
 
-            int result = GetMatchingIndex(list);
+            int result = GetMatchingValueIndex(list, 25);
             Console.WriteLine("result " + result);
 
+            //additional challenge
+            int[] indices = GetMatchingValueIndices(list, 25);
 
 
         }
 
-        static int GetMatchingIndex(List<KeyValuePair<string, int>> data)
+        static int GetMatchingValueIndex(List<KeyValuePair<string, int>> data, int value)
         {
             KeyValuePair<string, int> pair;
             for(int i = 0; i < data.Count; i++)
             {
                 pair = data[i];
                 Console.WriteLine("pair " + pair);
-                if (pair.Value == 25)
+                if (pair.Value == value)
                     return i;
             }
             return -1;
             
+        }
+
+        static int[] GetMatchingValueIndices(List<KeyValuePair<string, int>> data, int value)
+        {
+            KeyValuePair<string, int> pair;
+            int i = 0;
+            List<int> matchingIndices = new List<int>();
+            foreach(KeyValuePair<string, int> singleData in data)
+            {
+                
+                pair = singleData;
+                if(pair.Value == value)
+                {
+                    matchingIndices.Add(i);
+                }
+                i++;
+            }
+            Console.WriteLine("matchingIndices " + String.Join(",", matchingIndices));
+            return matchingIndices.ToArray();
         }
         
     }
