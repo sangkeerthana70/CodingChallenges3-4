@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +11,20 @@ namespace DayOfTheProgrammer
     {
         static void Main(string[] args)
         {
-            int year = 2016;
+            int year = 2017;
             string date = dayOfProgrammer(year);
+            Console.WriteLine("result: date " + date);
 
         }
 
         // Complete the dayOfProgrammer function below.
         static string dayOfProgrammer(int year)
         {
-            //Console.WriteLine((365 - 256)/12);
-
+            DateTime dateTime = new DateTime();
+            
+            
             // check if year belongs to Julian
-            if(year < 1919)
+            if (year < 1919)
             {
                 Console.WriteLine("year is Julian");
                 if(year % 4 == 0)
@@ -35,13 +38,24 @@ namespace DayOfTheProgrammer
                 if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
                 {
                     Console.WriteLine("Gregorian leap year");
+
+                }
+                else
+                {
+                    Console.WriteLine("in Gregorian non-leap year");
+                    int day = 256 - (90+91+62);
+                    Console.WriteLine("day " + day);
+
+                    dateTime = new DateTime(year, 9, day);
+                    Console.WriteLine("dateTime " + dateTime);
+
                 }
             }
             
             
 
 
-            return "";
+            return dateTime.ToString();
         }
 
     }
