@@ -11,7 +11,7 @@ namespace DayOfTheProgrammer
     {
         static void Main(string[] args)
         {
-            int year = 2017;
+            int year = 2016;
             string date = dayOfProgrammer(year);
             Console.WriteLine("result: date " + date);
 
@@ -30,6 +30,7 @@ namespace DayOfTheProgrammer
                 if(year % 4 == 0)
                 {
                     Console.WriteLine("Julian leap year");
+                    
                 }
             }
             if(year >= 1919)
@@ -38,6 +39,8 @@ namespace DayOfTheProgrammer
                 if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
                 {
                     Console.WriteLine("Gregorian leap year");
+                    int day = 256 - (91 + 91 + 62);
+                    Console.WriteLine("day " + day);
 
                 }
                 else
@@ -55,7 +58,7 @@ namespace DayOfTheProgrammer
             
 
 
-            return dateTime.ToString();
+            return dateTime.ToString("dd/mmm/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         }
 
     }
