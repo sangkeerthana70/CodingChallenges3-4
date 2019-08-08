@@ -11,7 +11,7 @@ namespace DayOfTheProgrammer
     {
         static void Main(string[] args)
         {
-            int year = 2016;
+            int year = 1800;
             string date = dayOfProgrammer(year);
             Console.WriteLine("result: date " + date);
 
@@ -21,44 +21,49 @@ namespace DayOfTheProgrammer
         static string dayOfProgrammer(int year)
         {
             DateTime dateTime = new DateTime();
-            
+            bool leapYear = true;
+           
             
             // check if year belongs to Julian
             if (year < 1919)
             {
                 Console.WriteLine("year is Julian");
-                if(year % 4 == 0)
+                if(leapYear)
                 {
                     Console.WriteLine("Julian leap year");
-                    
+                    dateTime = new DateTime(year, 9, 12);
+
+                }
+                else
+                {
+                    dateTime = new DateTime(year, 9, 13);
                 }
             }
             if(year >= 1919)
             {
                 Console.WriteLine("year is Gregorian");
-                if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+                if (leapYear)
                 {
                     Console.WriteLine("Gregorian leap year");
-                    int day = 256 - (91 + 91 + 62);
-                    Console.WriteLine("day " + day);
+                    
+                    dateTime = new DateTime(year, 9, 12);
 
                 }
                 else
                 {
                     Console.WriteLine("in Gregorian non-leap year");
-                    int day = 256 - (90+91+62);
-                    Console.WriteLine("day " + day);
+                   
 
-                    dateTime = new DateTime(year, 9, day);
-                    Console.WriteLine("dateTime " + dateTime);
-
+                    dateTime = new DateTime(year, 9, 13);
+                    
                 }
             }
-            
-            
+
+            Console.WriteLine(dateTime);
+            Console.WriteLine(dateTime.ToString("dd.MM.yyyy"));
 
 
-            return dateTime.ToString("dd/mmm/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            return dateTime.ToString("dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
         }
 
     }
