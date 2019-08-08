@@ -11,7 +11,7 @@ namespace DayOfTheProgrammer
     {
         static void Main(string[] args)
         {
-            int year = 1800;
+            int year = 2017;
             string date = dayOfProgrammer(year);
             Console.WriteLine("result: date " + date);
 
@@ -27,10 +27,10 @@ namespace DayOfTheProgrammer
             // check if year belongs to Julian
             if (year < 1919)
             {
-                Console.WriteLine("year is Julian");
+                //Console.WriteLine("year is Julian");
                 if(leapYear)
                 {
-                    Console.WriteLine("Julian leap year");
+                    //Console.WriteLine("Julian leap year");
                     dateTime = new DateTime(year, 9, 12);
 
                 }
@@ -41,17 +41,17 @@ namespace DayOfTheProgrammer
             }
             if(year >= 1919)
             {
-                Console.WriteLine("year is Gregorian");
+                //Console.WriteLine("year is Gregorian");
                 if (leapYear)
                 {
-                    Console.WriteLine("Gregorian leap year");
+                    //Console.WriteLine("Gregorian leap year");
                     
                     dateTime = new DateTime(year, 9, 12);
 
                 }
                 else
                 {
-                    Console.WriteLine("in Gregorian non-leap year");
+                    //Console.WriteLine("in Gregorian non-leap year");
                    
 
                     dateTime = new DateTime(year, 9, 13);
@@ -59,8 +59,8 @@ namespace DayOfTheProgrammer
                 }
             }
 
-            Console.WriteLine(dateTime);
-            Console.WriteLine(dateTime.ToString("dd.MM.yyyy"));
+            //Console.WriteLine(dateTime);
+           // Console.WriteLine(dateTime.ToString("dd.MM.yyyy"));
 
 
             return dateTime.ToString("dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
