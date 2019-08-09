@@ -40,6 +40,7 @@ namespace ObjectFinder
             };
             */
            
+            // Declare a list of Key value pairs
             var list = new List<KeyValuePair<string, int>>();
             list.Add(new KeyValuePair<string, int>("Cliff", 32));
             list.Add(new KeyValuePair<string, int>("John", 25));
