@@ -19,10 +19,10 @@ namespace isCaseInsensitivePalindrome
         {
             char[] arr = inputString.ToCharArray();
             Array.Reverse(arr);
-            Console.WriteLine(String.Join(",", arr));
+            //Console.WriteLine(String.Join(",", arr));
 
             string reverse = new string(arr);
-            Console.WriteLine("reverse " + reverse);
+            //Console.WriteLine("reverse " + reverse);
            
 
             if(inputString == reverse)
@@ -32,13 +32,11 @@ namespace isCaseInsensitivePalindrome
 
             if(inputString.ToUpper() == reverse.ToUpper())
             {
-                Console.WriteLine("in upper");
                 return true;
             }
 
             if (inputString.ToLower() == reverse.ToLower())
             {
-                Console.WriteLine("in lower");
                 return true;
             }
 
