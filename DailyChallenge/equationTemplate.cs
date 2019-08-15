@@ -36,6 +36,17 @@ bool equationTemplate(int[] values) {
       return true;
    }
    
+   if(values[0] * values[1] == values[2] * values[3])
+   {
+      return true;
+   }
+   
+   if(values[0] * values[2] == values[1] * values[3])
+   {
+      return true;
+   }
+   
+   
    Array.Sort(values);
 
    if((values[3]) == (values[0] * values[1] * values[2]))
