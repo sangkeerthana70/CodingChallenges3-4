@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euler'sTotientFunction", "Euler'sTotientFunction.\Euler'sTotientFunction.csproj", "{98812474-43BE-432B-A11F-3CFFCAB5AE66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98812474-43BE-432B-A11F-3CFFCAB5AE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98812474-43BE-432B-A11F-3CFFCAB5AE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98812474-43BE-432B-A11F-3CFFCAB5AE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98812474-43BE-432B-A11F-3CFFCAB5AE66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B242F1F6-FC96-4629-B8E0-DFB1B515F9CC}
+	EndGlobalSection
+EndGlobal
