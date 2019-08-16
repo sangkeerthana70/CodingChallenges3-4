@@ -10,11 +10,21 @@ namespace Euler_sTotientFunction
     {
         static void Main(string[] args)
         {
-            int n = 10;
+            int n = 10;// uncommon factors are 1, 3, 7, 9
             int result = eulersTotientFunction(n);
             Console.WriteLine("result " + result);
 
         }
+
+
+
+
+        /* Given an integer n, find the value of phi(n), where phi is Euler's totient function.
+         Example
+
+        For n = 5, the output should be
+        eulersTotientFunction(n) = 4. Since 1, 2, 3, 4 do not have a common factor with 5
+            */
 
         static int eulersTotientFunction(int n)
         {
