@@ -23,49 +23,46 @@ namespace groupingDishes
         static string[][] groupingDishes(string[][] dishes)
         {
             string[][] result = new string[][] { };
-            Dictionary<string, List<string>> dishList = new Dictionary<string, List<string>>();
-            string dishName;
-            
-            List<string> ingredients = new List<string>();
+            Dictionary<string, List<string>> groupOfDishes = new Dictionary<string, List<string>>();
 
-            for (int col = 0; col < dishes[0].Length; col++)
-            {              
-                    for (int row = 0; row < dishes.Length; row++)
+            List<string> dish;
+
+            string firstRowElement;// dish
+            string currentElement;// ingredient
+            for(int i = 0; i < dishes.Length; i++)
+            {
+                firstRowElement = dishes[i][0];
+                //Console.WriteLine("firstRowElement " + firstRowElement);
+                for(int j = 1; j < dishes[i].Length; j++)
+                {
+                    //Console.WriteLine("dishes[i][j] " + dishes[i][j]);
+                    currentElement = dishes[i][j];
+                    //Console.WriteLine("currentElement " + currentElement);
+                    if (groupOfDishes.ContainsKey(currentElement))
                     {
-                    
-                        dishName = dishes[col][row];
-                        
-                        if (dishList.ContainsKey(dishName))
-                        {
-                        //ingredients = new List<string>();
-                            Console.WriteLine("in contains key");
-                            ingredients.Add(dishes[row][0]);
-                        }
-                        else
-                        {
-                            Console.WriteLine("in adding to list");
-                            ingredients = new List<string>();
-                            ingredients.Add(dishes[col][row + 1]);
-                        
-                        }
-                        foreach (string ingredient in ingredients)
-                        {
-                            Console.WriteLine("dishName: " + dishName);
-                            Console.WriteLine("list ingredient: " + ingredient);
-                        }
-
+                        groupOfDishes[currentElement].Add(firstRowElement);
                     }
-                    foreach(KeyValuePair<string, List<string>> newdishList in dishList)
+                    else
                     {
-                        Console.WriteLine("keyValuePair: " + newdishList);
+                        dish = new List<string>();
+                        dish.Add(firstRowElement);
+                        groupOfDishes.Add(currentElement, dish);
                     }
-                
+                }
 
+                foreach(KeyValuePair <string, List<string>> dicResult in groupOfDishes)
+                {
+                    foreach (string value in dicResult.Value)
+                    {
+                        Console.WriteLine("key = {0}, value = {1} ", dicResult.Key, value);
+                    }
+                }
             }
-            
+
             return result;
-
         }
-
+ 
     }
+
+    
 }
